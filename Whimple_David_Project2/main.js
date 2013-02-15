@@ -33,21 +33,21 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	function getFood(){
 		control("on");
-		var createForm = document.createElement("form");
-		createForm.setAttribute("uniqueId", "information");
-		var createFieldset = document.createElement("fieldset");
-		createForm.appendChild(createFieldset);
-		var createLegend = document.createElement("legend");
-		createLegend.innerHTML = "Daily Log";
-		createFieldset.appendChild(createLegend);
-		var createList = document.createElement("ul");
-		createFieldset.appendChild(createList);
-		document.body.appendChild(createForm);
 		if(localStorage.length === 0){
 			alert("You have not logged any food.");
 			window.location.reload();
 		}else{
 		for(i = 0; i < localStorage.length; i++){
+			var createForm = document.createElement("form");
+			createForm.setAttribute("uniqueId", "information");
+			var createFieldset = document.createElement("fieldset");
+			createForm.appendChild(createFieldset);
+			var createLegend = document.createElement("legend");
+			createLegend.innerHTML = "Daily Log";
+			createFieldset.appendChild(createLegend);
+			var createList = document.createElement("ul");
+			createFieldset.appendChild(createList);
+			document.body.appendChild(createForm);
 			var createLi = document.createElement("li");
 			createList.appendChild(createLi);
 			var key = localStorage.key(i);
