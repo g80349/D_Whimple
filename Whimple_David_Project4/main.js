@@ -38,19 +38,18 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(localStorage.length === 0){
 			alert("You have not logged any food so default logs were added.");
 			autoFillLogs();
-		}else{
+		}
 		for(i = 0; i < localStorage.length; i++){
-		var createForm = document.createElement("form");
-		createForm.setAttribute("uniqueId", "information");
-		var createFieldset = document.createElement("fieldset");
-		createForm.appendChild(createFieldset);
-		var createLegend = document.createElement("legend");
-		createLegend.innerHTML = "Daily Log";
-		createFieldset.appendChild(createLegend);
-		var createList = document.createElement("ul");
-		createFieldset.appendChild(createList);
-		document.body.appendChild(createForm);
-		
+			var createForm = document.createElement("form");
+			createForm.setAttribute("uniqueId", "information");
+			var createFieldset = document.createElement("fieldset");
+			createForm.appendChild(createFieldset);
+			var createLegend = document.createElement("legend");
+			createLegend.innerHTML = "Daily Log";
+			createFieldset.appendChild(createLegend);
+			var createList = document.createElement("ul");
+			createFieldset.appendChild(createList);
+			document.body.appendChild(createForm);
 			var createLi = document.createElement("li");
 			var linkList = document.createElement("li");
 			createList.appendChild(createLi);
@@ -59,6 +58,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var infoObj = JSON.parse(value);
 			var createSubList = document.createElement("ul");
 			createLi.appendChild(createSubList);
+			getImg(createSubList, infoObj.select[1]);
 			for(var x in infoObj){
 				var createSubLi = document.createElement("li");
 				createSubList.appendChild(createSubLi);
@@ -67,16 +67,26 @@ window.addEventListener("DOMContentLoaded", function(){
 				createSubList.appendChild(linkList);	
 			}	
 		createLinks(localStorage.key(i), linkList);
-		}
 		}	
 	};
+	
+	
+	//
+
+	function getImg(createSubList, foodName){
+		var createImageLi = document.createElement("li");
+		createSubList.appendChild(createImageLi);
+		var newImage =document.createElement("img");
+		var getSrc = newImage.setAttribute("src", "images/" + foodName + ".png");
+		createImageLi.appendChild(newImage);
+	}
+
 	
 	//If there are not any food logs present in local storage this will supply local sorage with logs for testing purposes.
 	
 	function autoFillLogs(){
 	
 		for(var x in json){
-		console.log("I made it here!");
 			var uniqueId = Math.floor(Math.random()*1000000000);
 			localStorage.setItem(uniqueId, JSON.stringify(json[x]));
 		}
@@ -256,7 +266,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(!key){
 			var uniqueId = Math.floor(Math.random()*1000000000);
 			}else{
-				id = key;
+				uniqueId = key;
 			};
 		isChecked();
 		var userFood           = {};

@@ -73,9 +73,9 @@ var json = {
 		"range3": ["Serving(s):", "3"],
 		"food4": ["Food:", "New Castle"],
 		"foodCals4": ["Calories:", "200"],
-		"range4": ["Serving(s):", "12"],
+		"range4": ["Serving(s):", "5"],
 		"check1": ["","Notes:"],
-		"notes": ["", "Holy crap. I drank too much beer."]
+		"notes": ["", "I love beer."]
 	}
 };
 
