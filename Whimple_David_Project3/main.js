@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(localStorage.length === 0){
 			alert("You have not logged any food.");
 			window.location.reload();
-		}else{
+		}
 		for(i = 0; i < localStorage.length; i++){
 			var createForm = document.createElement("form");
 			createForm.setAttribute("uniqueId", "information");
@@ -67,9 +67,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 		createLinks(localStorage.key(i), linkList);	
 		}
-		}
-	};
-	
+};
+
+		
 	//Create Edit and Delete links.
 	
 	function createLinks(key,linkList){
@@ -244,7 +244,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(!key){
 			var uniqueId = Math.floor(Math.random()*1000000000);
 			}else{
-				id = key;
+				uniqueId = key;
 			};
 		isChecked();
 		var userFood           = {};
