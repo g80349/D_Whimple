@@ -36,18 +36,13 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(localStorage.length === 0){
 			alert("You have not logged any food.");
 			window.location.reload();
-		}else{
+		}
 		for(i = 0; i < localStorage.length; i++){
-			var createForm = document.createElement("form");
-			createForm.setAttribute("uniqueId", "information");
-			var createFieldset = document.createElement("fieldset");
-			createForm.appendChild(createFieldset);
-			var createLegend = document.createElement("legend");
-			createLegend.innerHTML = "Daily Log";
-			createFieldset.appendChild(createLegend);
+			var createDiv = document.createElement("div");
+			createDiv.setAttribute("uniqueId", "information");
 			var createList = document.createElement("ul");
-			createFieldset.appendChild(createList);
-			document.body.appendChild(createForm);
+			createDiv.appendChild(createList);
+			document.body.appendChild(createDiv);
 			var createLi = document.createElement("li");
 			createList.appendChild(createLi);
 			var key = localStorage.key(i);
@@ -61,7 +56,6 @@ window.addEventListener("DOMContentLoaded", function(){
 				var subText = infoObj[x][0]+ " " + infoObj[x][1];
 				createSubLi.innerHTML = subText;
 				}	
-		}
 		}
 	};
 	
@@ -102,17 +96,17 @@ window.addEventListener("DOMContentLoaded", function(){
 			if(myEle("food1").value != ""){
 			userFood.food1	   = ["Food:", myEle("food1").value];
 			userFood.foodCals1 = ["Calories:", myEle("foodCals1").value];
-			userFood.range4    = ["Serving(s):", myEle("range1").value]
+			userFood.range1    = ["Serving(s):", myEle("range1").value]
 			}
 			if(myEle("food2").value != ""){
 			userFood.food2	   = ["Food:", myEle("food2").value];
 			userFood.foodCals2 = ["Calories:", myEle("foodCals2").value];
-			userFood.range4    = ["Serving(s):", myEle("range2").value]
+			userFood.range2    = ["Serving(s):", myEle("range2").value]
 			}
 			if(myEle("food3").value != ""){
 			userFood.food3	   = ["Food:", myEle("food3").value];
 			userFood.foodCals3 = ["Calories:", myEle("foodCals3").value];
-			userFood.range4    = ["Serving(s):", myEle("range3").value]
+			userFood.range3    = ["Serving(s):", myEle("range3").value]
 			}
 			if(myEle("food4").value != ""){
 			userFood.food4	   = ["Food:", myEle("food4").value];

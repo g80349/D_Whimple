@@ -88,17 +88,15 @@ textarea#notes{
     -webkit-box-shadow: 1px 1px 1px #525252;
     font-size: 10px;   
 }
-div{	
-	text-align: center;
-	margin-bottom: 10px;
+div{
+	border: 1px solid #c4e910;
+	background-color: #a8a64a;
+	border-radius: 8px;
+	margin-top: 10px;
 }
-a{	
-	
+a{		
 	color: #c4e910;
 }
 a:hover{
 	color: white;
-}
-a#clear{
-	margin-right: 10px;
 }

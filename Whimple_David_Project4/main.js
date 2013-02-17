@@ -40,16 +40,11 @@ window.addEventListener("DOMContentLoaded", function(){
 			autoFillLogs();
 		}
 		for(i = 0; i < localStorage.length; i++){
-			var createForm = document.createElement("form");
-			createForm.setAttribute("uniqueId", "information");
-			var createFieldset = document.createElement("fieldset");
-			createForm.appendChild(createFieldset);
-			var createLegend = document.createElement("legend");
-			createLegend.innerHTML = "Daily Log";
-			createFieldset.appendChild(createLegend);
+			var createDiv = document.createElement("div");
+			createDiv.setAttribute("uniqueId", "information");
 			var createList = document.createElement("ul");
-			createFieldset.appendChild(createList);
-			document.body.appendChild(createForm);
+			createDiv.appendChild(createList);
+			document.body.appendChild(createDiv);
 			var createLi = document.createElement("li");
 			var linkList = document.createElement("li");
 			createList.appendChild(createLi);
