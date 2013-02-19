@@ -5,7 +5,7 @@ Project 3
 CSS Stylesheet*/
 
 body{
-	width: 305px;
+	
 	background-color: #7f8a29;
 	color: white;
 }
@@ -19,6 +19,7 @@ h1{
 	color:#c4e910;	
 	background-color: #a8a64a;
 	border:1px solid #c4e910;
+	border-radius: 8px;
 	}
 p{
 	font-size: 20px;
@@ -97,9 +98,16 @@ div{
 	background-color: #a8a64a;
 	border-radius: 8px;
 	margin-top: 10px;
+	word-wrap: break-word;
+}
+div.anchor{
+	text-align: center;
+	border: none;	
+	background-color: #7f8a29;
 }
 a{		
 	color: #c4e910;
+	margin: 5px;
 }
 a:hover{
 	color: white;
