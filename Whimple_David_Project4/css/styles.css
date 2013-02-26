@@ -1,7 +1,7 @@
 /*
 David Whimple
 VFW 1302
-Project 3 
+Project 4 
 CSS Stylesheet*/
 
 body{
@@ -106,6 +106,7 @@ div.anchor{
 }
 a{	
 	color: #c4e910;
+	margin: 5px;
 }
 a:hover{
 	color: white;

@@ -1,3 +1,10 @@
+//David Whimple
+//VFW 1302
+//Project 4
+//JSON
+
+
+
 var json = {
 	"log1": {
 		"date": ["Date:", "2012-02-27"],

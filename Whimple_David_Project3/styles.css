@@ -5,7 +5,6 @@ Project 3
 CSS Stylesheet*/
 
 body{
-	
 	background-color: #7f8a29;
 	color: white;
 }
@@ -99,6 +98,7 @@ div{
 	border-radius: 8px;
 	margin-top: 10px;
 	word-wrap: break-word;
+	padding-right: 8px;
 }
 div.anchor{
 	text-align: center;

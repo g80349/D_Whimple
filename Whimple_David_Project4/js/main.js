@@ -1,6 +1,6 @@
 //David Whimple
 //VFW 1302
-//Project 3
+//Project 4
 //Javascript
 
 //Loads the DOM before page becomes functional
