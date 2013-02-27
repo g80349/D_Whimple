@@ -286,7 +286,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Event listeners for button, links, and sliders
 	
 	var submitFood = myEle("food");
-	submitFood.addEventListener("click", storeFood);
+	submitFood.addEventListener("click", verify);
 	var clear = myEle("clear");					
 	clear.addEventListener("click", clearInfo);  
 	var displayData = myEle("displayData");
