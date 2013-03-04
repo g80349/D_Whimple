@@ -83,7 +83,168 @@ var json = {
 		"range4": ["Serving(s):", "5"],
 		"check1": ["","Notes:"],
 		"notes": ["", "I love beer."]
+	},
+	"log5": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Breakfast"],
+		"food1": ["Food:", "Bagel"],
+		"foodCals1": ["Calories:", "120"],
+		"range1": ["Serving(s):", "2"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log6": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Breakfast"],
+		"food1": ["Food:", "Grapefruit"],
+		"foodCals1": ["Calories:", "20"],
+		"range1": ["Serving(s):", "1"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log7": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Lunch"],
+		"food1": ["Food:", "Burger"],
+		"foodCals1": ["Calories:", "400"],
+		"range1": ["Serving(s):", "1"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log8": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Lunch"],
+		"food1": ["Food:", "Sandwich"],
+		"foodCals1": ["Calories:", "250"],
+		"range1": ["Serving(s):", "1"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log9": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Dinner"],
+		"food1": ["Food:", "Steak"],
+		"foodCals1": ["Calories:", "300"],
+		"range1": ["Serving(s):", "1"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log10": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Dinner"],
+		"food1": ["Food:", "Salmon"],
+		"foodCals1": ["Calories:", "60"],
+		"range1": ["Serving(s):", "2"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log11": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Dinner"],
+		"food1": ["Food:", "Talapia"],
+		"foodCals1": ["Calories:", "40"],
+		"range1": ["Serving(s):", "2"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log12": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Dinner"],
+		"food1": ["Food:", "Rice"],
+		"foodCals1": ["Calories:", "100"],
+		"range1": ["Serving(s):", "2"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log13": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Dinner"],
+		"food1": ["Food:", "Broccoli"],
+		"foodCals1": ["Calories:", "20"],
+		"range1": ["Serving(s):", "4"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log14": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Snacks"],
+		"food1": ["Food:", "Ice Cream"],
+		"foodCals1": ["Calories:", "120"],
+		"range1": ["Serving(s):", "1"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log15": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Snacks"],
+		"food1": ["Food:", "Licorice"],
+		"foodCals1": ["Calories:", "40"],
+		"range1": ["Serving(s):", "3"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log16": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Snacks"],
+		"food1": ["Food:", "Chips & Salsa"],
+		"foodCals1": ["Calories:", "60"],
+		"range1": ["Serving(s):", "3"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log17": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Snacks"],
+		"food1": ["Food:", "Yogurt"],
+		"foodCals1": ["Calories:", "80"],
+		"range1": ["Serving(s):", "1"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log18": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Snacks"],
+		"food1": ["Food:", "Pretzels"],
+		"foodCals1": ["Calories:", "60"],
+		"range1": ["Serving(s):", "4"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log19": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Snacks"],
+		"food1": ["Food:", "Dots"],
+		"foodCals1": ["Calories:", "65"],
+		"range1": ["Serving(s):", "4"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
+	},
+	"log20": {
+		"date": ["Date:", "2012-05-27"],
+		"weight": ["Today's Weight:", "195"],
+		"select": ["Meal:", "Snacks"],
+		"food1": ["Food:", "Baby Carrots & Hummus"],
+		"foodCals1": ["Calories:", "40"],
+		"range1": ["Serving(s):", "5"],
+		"check1": ["","Notes:"],
+		"notes": ["", ""]
 	}
+
 };
 
 
