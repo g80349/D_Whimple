@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--David Whimple-->
-<!--VFW 1302-->
-<!--Project 4-->
+<!--MIU 1303-->
+<!--Project 1-->
 <!--HTML-->
 
 <html>
@@ -16,9 +16,26 @@
     </head>
     <body>
         <header>
-            <h1 id="main">Calorie Counter</h1>
+            <h1 id="h1">Calorie Counter</h1>
         </header>
-        <form action="#" method="post" id="form1">
+        <div class="CTA" id="main">
+        	<p id="health">Help yourself feel and eat healthy everyday...</p>
+        	<img src="images/CTA.jpg" id="CTA">
+        	<input type="button" value="Get Started" id="startButton"/>
+        </div>
+        <div id="search">
+        	<input type="text" id="searchText" placeholder="Search"/>
+        	<input type="button"  value="Search" id="searchButton"/>
+        </div>
+        <div id="browse">
+          	<h2 id="h2">Browse By</h2>
+        	<input type="button" value="Date" id="dateButton"/>
+        	<input type="button" value="Breakfast" id="breakfastButton"/>
+        	<input type="button" value="Lunch" id="lunchButton"/>
+        	<input type="button" value="Dinner" id="dinnerButton"/>
+        	<input type="button" value="Snacks" id="snacksButton"/>
+        </div>
+        <form action="#" method="post" id="form1" style="display:none">
             <fieldset>
                	<legend>Daily Log</legend>
                		<ul id="error"></ul>
@@ -57,8 +74,8 @@
         </form>
         <nav>
         	<div class="anchor">
-       			<a href="addItem.html" id="clear">Clear stored data</a>
-       			<a href="#" id="displayData">Display data</a>
+       			<a href="addItem.html" id="clear" style="display:none">Clear stored data</a>
+       			<a href="#" id="displayData" style="display:none">Display data</a>
        			<a href="addItem.html" id="addNewFood" style="display:none">Back</a>
         	</div>
         </nav>

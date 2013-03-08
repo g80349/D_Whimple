@@ -1,6 +1,6 @@
 //David Whimple
-//VFW 1302
-//Project 4
+//MIU 1303
+//Project 1
 //Javascript
 
 //Loads the DOM before page becomes functional
@@ -10,6 +10,60 @@ window.addEventListener("DOMContentLoaded", function(){
 		var myElement = document.getElementById(x);
 		return myElement;
 	};
+	
+	function getStarted(){
+		myEle("form1").style.display = "block";
+		myEle("clear").style.display = "inline";
+		myEle("displayData").style.display = "inline";
+		myEle("main").style.display = "none";
+		myEle("search").style.display = "none";
+		myEle("browse").style.display = "none";
+	}
+
+	
+	function searchLogs(){
+		myEle("main").style.display = "none";
+		myEle("search").style.display = "none";
+		myEle("browse").style.display = "none";
+		myEle("addNewFood").style.display = "inline";
+	}
+
+	
+	function getDates(){
+		myEle("main").style.display = "none";
+		myEle("search").style.display = "none";
+		myEle("browse").style.display = "none";		
+		myEle("addNewFood").style.display = "inline";	
+	}
+	
+	function getBreakfasts(){
+		myEle("main").style.display = "none";
+		myEle("search").style.display = "none";
+		myEle("browse").style.display = "none";	
+		myEle("addNewFood").style.display = "inline";
+	}
+
+	function getLunches(){
+		myEle("main").style.display = "none";
+		myEle("search").style.display = "none";
+		myEle("browse").style.display = "none";
+		myEle("addNewFood").style.display = "inline";
+	}
+
+	function getDinners(){
+		myEle("main").style.display = "none";
+		myEle("search").style.display = "none";
+		myEle("browse").style.display = "none";
+		myEle("addNewFood").style.display = "inline";
+	}
+
+	function getSnacks(){
+		myEle("main").style.display = "none";
+		myEle("search").style.display = "none";
+		myEle("browse").style.display = "none";
+		myEle("addNewFood").style.display = "inline";
+	}
+
 	
 	//Switch case for Display data link.
 		
@@ -324,6 +378,21 @@ window.addEventListener("DOMContentLoaded", function(){
 	range4.addEventListener("change",getServings);
 	var check1 = myEle("check1");
 	check1.addEventListener("click", addNotes);
+	var startButton = myEle("startButton");
+	startButton.addEventListener("click", getStarted);
+	var searchButton = myEle("searchButton");
+	searchButton.addEventListener("click",searchLogs);
+	var dateButton = myEle("dateButton");
+	dateButton.addEventListener("click", getDates);
+	var breakfastButton = myEle("breakfastButton");
+	breakfastButton.addEventListener("click", getBreakfasts);
+	var lunchButton = myEle("lunchButton");
+	lunchButton.addEventListener("click", getLunches);
+	var dinnerButton = myEle("dinnerButton");
+	dinnerButton.addEventListener("click", getDinners);
+	var snacksButton = myEle("snacksButton");
+	snacksButton.addEventListener("click", getSnacks);
+	
 	
 	
 });
