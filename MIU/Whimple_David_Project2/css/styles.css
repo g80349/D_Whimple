@@ -1,0 +1,179 @@
+/*
+David Whimple
+MIU  1303
+Project 1 
+CSS Stylesheet*/
+
+body{
+	background-color: #7f8a29;
+	color: white;
+}
+h1{	
+	padding-top:15px;
+	font-family: fantasy;
+	font-size: 30px;
+	
+	text-align: center;
+	color:white;	
+	background-color: #a8a64a;
+	border:1px solid #c4e910;
+	border-radius: 8px;
+	}
+h2{
+	font-size: 20px;
+	font-family: fantasy;
+	text-align: center;
+	color: white;
+	background-color: #7f8a29;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+p{
+	font-size: 20px;
+	text-align: center;
+}
+p#health{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-family: fantasy;
+	font-size: 23px;
+	color: white;
+	border: 1px solid #c4e910;
+	border-radius: 8px;
+}
+img#CTA{
+	width: 100%;
+	height: 200px;
+	float: left;
+	margin-top: -28px;
+}
+input#startButton{
+	width: 55%;
+	height: 30px;
+	float: right;
+	font-family: fantasy;
+	font-size: 20px;
+	background-color:#dfff39;
+	color: black;
+	margin-top: -50px;
+}
+input#searchText{
+	width: 62%;
+	height:20px;
+	font-size: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: fantasy;
+}
+input#searchButton{
+	width: 30%;
+	height: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	background-color:#dfff39;
+	font-family: fantasy;
+	float: right;
+}
+input#dateButton,#breakfastButton,#lunchButton,#dinnerButton,#snacksButton{
+	width: 100%;
+	height: 30px;
+	font-size: 20px;
+	padding-top: 5px;
+	background-color:#dfff39;
+	font-family: fantasy;
+	
+}
+fieldset{	
+	background-color: #a8a64a;
+	font-family: fantasy;
+	font-size: 14px;
+	border-radius: 8px;
+	border: 1px solid #c4e910;
+}
+ul#error{
+	color:#dfff39;
+}
+input{
+	height: 14px;
+    background-color:white;
+    border: 1px solid black;		
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 1px 1px 1px #525252;
+    font-size: 10px;
+    margin:1px;
+    text-indent: 5px;
+}
+input#range1,#range2,#range3,#range4{
+	width: 60%;
+	float: right;
+}
+input#date,#weight,#food1,#foodCals1,#food2,#foodCals2,#food3,#foodCals3,#food4,#foodCals4{
+	float:right;
+	width: 140px;
+}
+input#date{
+	width: 100px;
+}
+input#weight{
+	width: 40px;
+}
+input#food,#dateButton{
+	width: 100%;
+	height: 30px;
+	font-size: 15px;
+	padding-top: 5px;
+	background-color:#dfff39;
+	font-family: fantasy;	
+}
+input#range1Value,#range2Value,#range3Value,#range4Value{
+	width:20px;
+}
+legend{
+	margin-top: 10px;
+	font-size: 20px;
+	font-family: fantasy;
+	-webkit-text-stroke: 1px;
+	-webkit-text-stroke-color: #dfff39;
+	color: #c4e910;
+	text-align: center;
+}
+select{
+	width: 100%;
+	font-size: 12px;
+}
+textarea#notes{
+	width: 80%;
+	height: 50px;
+    border: 1px solid black;		
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 1px 1px 1px #525252;
+    font-size: 10px;   
+}
+div{
+	border: 1px solid #c4e910;
+	background-color: #a8a64a;
+	border-radius: 8px;
+	margin-top: 10px;
+	word-wrap: break-word;
+}
+div.CTA{
+	border: none;
+	padding: none;
+	margin: none;
+}
+div.anchor{
+	text-align: center;
+	border: none;	
+	background-color: #7f8a29;
+}
+a{	
+	color: #c4e910;
+	margin: 5px;
+}
+a:hover{
+	color: white;
+}
