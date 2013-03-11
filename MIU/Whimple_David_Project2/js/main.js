@@ -16,7 +16,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		myEle("clear").style.display = "inline";
 		myEle("displayData").style.display = "inline";
 		myEle("main").style.display = "none";
-		myEle("search").style.display = "none";
 		myEle("browse").style.display = "none";
 	}
 
