@@ -11,15 +11,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		return myElement;
 	};
 	
-	function getStarted(){
-		myEle("form1").style.display = "block";
-		myEle("clear").style.display = "inline";
-		myEle("displayData").style.display = "inline";
-		myEle("main").style.display = "none";
-		myEle("browse").style.display = "none";
-	}
-
-	
 	function searchLogs(){
 		myEle("main").style.display = "none";
 		myEle("search").style.display = "none";
@@ -377,8 +368,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	range4.addEventListener("change",getServings);
 	var check1 = myEle("check1");
 	check1.addEventListener("click", addNotes);
-	var startButton = myEle("startButton");
-	startButton.addEventListener("click", getStarted);
 	var searchButton = myEle("searchButton");
 	searchButton.addEventListener("click",searchLogs);
 	var dateButton = myEle("dateButton");
