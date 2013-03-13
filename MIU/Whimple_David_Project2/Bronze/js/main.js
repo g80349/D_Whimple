@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		myEle("browse").style.display = "none";
 		myEle("addNewFood").style.display = "inline";
 	}
-
 	
 	function getDates(){
 		myEle("main").style.display = "none";
