@@ -4,17 +4,15 @@ MIU  1303
 Project 2 
 CSS Stylesheet*/
 
-h2{
-	text-align: center;
-	font-family: fantasy;
-}
 body{
 	background-color: #7f8a29;
 	color: white;
 }
-h1{	
+h1{
+	text-align: center;
+}
+h1#h1{	
 	padding-top:15px;
-	font-family: fantasy;
 	font-size: 30px;
 	text-align: center;
 	color:white;	
@@ -22,7 +20,6 @@ h1{
 	}
 h2{
 	font-size: 20px;
-	font-family: fantasy;
 	text-align: center;
 }
 p{
@@ -36,7 +33,6 @@ img#CTA{
 }
 fieldset{	
 	background-color: #a8a64a;
-	font-family: fantasy;
 	font-size: 14px;
 	border-radius: 8px;
 	border: 1px solid #c4e910;
@@ -73,7 +69,6 @@ input#food{
 	font-size: 15px;
 	padding-top: 5px;
 	background-color:#dfff39;
-	font-family: fantasy;	
 }
 input#range1Value,#range2Value,#range3Value,#range4Value{
 	width:20px;
@@ -81,7 +76,6 @@ input#range1Value,#range2Value,#range3Value,#range4Value{
 legend{
 	margin-top: 10px;
 	font-size: 20px;
-	font-family: fantasy;
 	-webkit-text-stroke: 1px;
 	-webkit-text-stroke-color: #dfff39;
 	color: #c4e910;
@@ -116,5 +110,4 @@ a#startButton{
 	margin-right: 5px;
 	float: right;
 	margin-top: -55px;
-	font-family: fantasy;
 }
