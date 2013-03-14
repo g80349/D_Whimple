@@ -25,10 +25,11 @@
             	<h1 >Calorie Counter</h1>	
             </div>
             <div data-role="content" id="cta">
-        		<h2 id="health">Help yourself feel and eat healthy everyday...</h2>
+        		<h2 id="health">Help yourself feel healthy and eat healthy everyday...</h2>
         		<img src="images/CTA.jpg" id="CTA">          
         		<a href="addItem.html" data-ajax="false" data-role="button" id="startButton"data-theme="b">Get Started</a>
-        		<input type="search" data-filter="true" id="searchText" data-theme="b"/>
+        		<input type="search" id="searchText" data-theme="b"/>
+        		<input type="submit" id="searchButton" value="Search" data-theme="b"/>
         	</div>
           		<div>
           			<h2 id="h2">Browse By</h2>
@@ -42,7 +43,7 @@
           			<li><a href="#snacks"id="snacksButton">Snacks</a></li>
           		</ul>
           	</div>
-          	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+          	<div data-role="footer" data-position="fixed" > 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter" class="ui-btn-active">Home</a></li>
@@ -52,6 +53,7 @@
         		</div>
         	</div>
     	</div>
+<!--Date page-->
     	<div data-role="page" id="date" data-add-back-btn="true" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -61,16 +63,17 @@
         	<div data-role="content">
         		<p>There are not any dates searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        	<div data-role="footer" data-position="fixed" > 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
-	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weight</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weigh-In</a></li>
 	        			<li><a href="#about" data-role="button" id="aboutFooter">About</a></li>
         			</ul>
         		</div>
         	</div>
         </div>
+<!--Breakfast page-->
         <div data-role="page" id="breakfast" data-add-back-btn="true" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -80,16 +83,17 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        	<div data-role="footer" data-position="fixed" > 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
-	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weight</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weigh-In</a></li>
 	        			<li><a href="#about" data-role="button" id="aboutFooter">About</a></li>
         			</ul>
         		</div>
         	</div>
         </div>
+<!--Lunch page-->
     	<div data-role="page" id="lunch" data-add-back-btn="true" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -99,16 +103,17 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        	<div data-role="footer" data-position="fixed" > 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
-	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weight</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weigh-In</a></li>
 	        			<li><a href="#about" data-role="button" id="aboutFooter">About</a></li>
         			</ul>
         		</div>
         	</div>
         </div>
+<!--Dinner page-->
     	<div data-role="page" id="dinner" data-add-back-btn="true" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -118,16 +123,17 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        	<div data-role="footer" data-position="fixed" > 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
-	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weight</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weigh-In</a></li>
 	        			<li><a href="#about" data-role="button" id="aboutFooter">About</a></li>
         			</ul>
         		</div>
         	</div>
         </div>
+<!--Snacks page-->
     	<div data-role="page" id="snacks" data-add-back-btn="true" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -137,68 +143,93 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        	<div data-role="footer" data-position="fixed" > 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
-	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weight</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weigh-In</a></li>
 	        			<li><a href="#about" data-role="button" id="aboutFooter">About</a></li>
         			</ul>
         		</div>
         	</div>
         </div>
+<!--Previous weigh-ins page-->
+        <div id="previousWeight" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="a">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Previous Weigh-Ins</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<div>
+        			<p>There are no previous weigh-ins.</p>
+        		</div>
+        	</div>
+        	<div data-role="footer" data-position="fixed" > 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" id="aboutFooter">About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+
+<!--Weight button on navbar-->
         <div id="weightTrack" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
         			<h1>Weigh-In</h1>
         		</div>
         	</div>
-        	<div data-role="content">
+        	<div data-role="content" >
         		<div>
         			<h2>Last 7 days...</h2>
         		</div>
-        		<div data-role="collapsible" data-collapsed="false">
+        		<div data-role="collapsible" data-collapsed="false" data-theme="b">
         			<h3>Wednesday</h3>
-        			<p>3-13-13: 210 lbs.</p>
+        			<p data-filter="true">3-13-13: 210 lbs.</p>
         		</div>
-        		<div data-role="collapsible" data-collapsed="true">
+        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
         			<h3>Tuesday</h3>
         			<p>3-12-13: 212 lbs.</p>
         		</div>
-        		<div data-role="collapsible" data-collapsed="true">
+        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
         			<h3>Monday</h3>
         			<p>3-11-13: 212 lbs.</p>
         		</div>
-        		<div data-role="collapsible" data-collapsed="true">
+        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
         			<h3>Sunday</h3>
         			<p>3-10-13: 215 lbs.</p>
         		</div>
-        		<div data-role="collapsible" data-collapsed="true">
+        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
         			<h3>Saturday</h3>
         			<p>3-9-13: 214 lbs.</p>
         		</div>
-        		<div data-role="collapsible" data-collapsed="true">
+        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
         			<h3>Friday</h3>
         			<p>3-8-13: 216 lbs.</p>
         		</div>
-        		<div data-role="collapsible" data-collapsed="true">
+        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
         			<h3>Thursday</h3>
         			<p>3-7-13: 217 lbs.</p>
         		</div>
         		<div>
-        			<a href="">Previous Weigh-Ins</a>
+        			<a href="#previousWeight" data-role="button" id="previousButton" data-theme="b">Previous Weigh-Ins</a>
         		</div>
         	</div>
-        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        	<div data-role="footer" data-position="fixed"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
-	        			<li><a href="#weightTrack" data-role="button" id="weightFooter" class="ui-btn-active">Weight</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter" class="ui-btn-active">Weigh-In</a></li>
 	        			<li><a href="#about" data-role="button" id="aboutFooter">About</a></li>
         			</ul>
         		</div>
         	</div>
         </div>
+<!--About button on navbar-->
         <div id="about" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -208,39 +239,40 @@
         	<div data-role="content">
         		<ul data-role="listview">
         			<li>
-        				<a href="Whimple_David_Project2/Bronze/index.html">
-        					<img src=""/>
+        				<a href="http://g80349.D_Whimple/MIU/Whimple_David_Project2/Bronze/addItem.html">
+        					<img src="images/bronzeMedal.jpg"/>
         					<h3>Bronze App</h3>
         					<p>Link to Bronze app</p>
         				</a>
         			</li>
         			<li>
-        				<a href="https://github.com/g80349/D_Whimple/tree/Working-Copy/MIU/Whimple_David_Project2/Gold">
-        					<img src=""/>
+        				<a href="https://github.com/g80349/D_Whimple/blob/gh-pages/MIU/Whimple_David_Project2/Gold/index.html">
+        					<img src="images/gold.jpg"/>
         					<h3>Gold gh-page</h3>
         					<p>Link to Gold gh-page</p>
         				</a>
         			</li>
         			<li>
-        				<a href="https://github.com/g80349/D_Whimple/tree/Working-Copy/MIU/Whimple_David_Project2/Bronze">
-        					<img src=""/>
-        					<h3>Bronze hg-page</h3>
+        				<a href="https://github.com/g80349/D_Whimple/blob/gh-pages/MIU/Whimple_David_Project2/Bronze/index.html">
+        					<img src="images/bronze.jpg"/>
+        					<h3>Bronze gh-page</h3>
         					<p>Link to Bronze gh-page</p>
         				</a>
         			</li>
         			<li>
 	        			<a href="https://github.com/g80349/D_Whimple/tree/Working-Copy/MIU">
-        					<img src=""/>
+        					<img src="images/repo.jpg"/>
         					<h3>Repository</h3>
         					<p>Link to Github Repository</p>
         				</a>
         			</li>
-        		</ul>	
-        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		</ul>
+        	</div>	
+        	<div data-role="footer" data-position="fixed" > 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
-	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weight</a></li>
+	        			<li><a href="#weightTrack" data-role="button" id="weightFooter">Weigh-In</a></li>
 	        			<li><a href="#about" data-role="button" id="aboutFooter" class="ui-btn-active">About</a></li>
         			</ul>
         		</div>

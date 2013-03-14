@@ -297,7 +297,23 @@ window.addEventListener("DOMContentLoaded", function(){
 			localStorage.setItem(uniqueId, JSON.stringify(userFood));
 			alert("Log saved!");
 	};
-
+	
+/*	function searchLogs(){
+		var term = myEle("searchText").value;
+		if (term != ""){
+			for(i=0; i<localStorage.length; i++){
+				var key = localStorage.key(i);
+				var value = localStorage.getItem(key);
+				var obj = JSON.parse(value);
+				if(term === obj.select[3]){
+					for(x in obj){
+						console.log(obj[q][3]);
+					}
+				}
+			}
+		}
+	}
+*/
 	//Sets the range label to the value of the range slider
 	
 	function getServings(){
@@ -325,8 +341,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	range4.addEventListener("change",getServings);
 	var check1 = myEle("check1");
 	check1.addEventListener("click", addNotes);
-	//var searchText = myEle("searchText");
-	//searchText.addEventListener("search",searchLogs);
+	var searchText = myEle("searchText");
+	searchText.addEventListener("search",searchLogs);
 		
 	
 });
