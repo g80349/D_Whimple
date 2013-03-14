@@ -28,35 +28,45 @@
         		<h2 id="health">Help yourself feel healthy and eat healthy everyday...</h2>
         		<img src="images/CTA.jpg" id="CTA">          
         		<a href="addItem.html" data-ajax="false" data-role="button" id="startButton"data-theme="a">Get Started</a>
-        		<input type="search" id="searchText" data-theme="a"/>
-        		<input type="submit" id="searchButton" value="Search" data-theme="a"/>
         	</div>
           		<div>
           			<h2 id="h2">Browse By</h2>
           		</div>
           	<div id="browse">
-          		<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
-          			<h3>Date</h3>
-          			<p>This is not searchable at this time.</p>
-          		</div>
-          		<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
-          			<h3>Breakfast</h3>
-          			<p>This is not searchable at this time.</p>
-          		</div>
-          		<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
-          			<h3>Lunch</h3>
-          			<p>This is not searchable at this time.</p>
-          		</div>
-          		<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
-          			<h3>Dinner</h3>
-          			<p>This is not searchable at this time.</p>
-          		</div>
-          		<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
-          			<h3>Snacks</h3>
-          			<p>This is not searchable at this time.</p>
-          		</div>
+          		<ul data-role="listview" data-filter="true">
+          			<li>
+          				<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+	          				<h3>Date</h3>
+	          				<p>This is not searchable at this time.</p>
+	          			</div>
+          			</li>
+          			<li>
+	          			<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+		          			<h3>Breakfast</h3>
+		          			<p>This is not searchable at this time.</p>
+		          		</div>
+          			</li>
+          			<li>
+          				<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+	          				<h3>Lunch</h3>
+	          				<p>This is not searchable at this time.</p>
+	          			</div>
+          			</li>
+          			<li>
+	          			<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+		          			<h3>Dinner</h3>
+		          			<p>This is not searchable at this time.</p>
+		          		</div>
+          			</li>
+		          	<li>
+		          		<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+			          		<h3>Snacks</h3>
+			          		<p>This is not searchable at this time.</p>
+			          	</div>
+		          	</li>
+          		</ul>
           	</div>
-          	<div data-role="footer" data-position="fixed" > 
+          	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter" class="ui-btn-active">Home</a></li>
@@ -76,7 +86,7 @@
         	<div data-role="content">
         		<p>There are not any dates searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
@@ -96,7 +106,7 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
@@ -116,7 +126,7 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
@@ -136,7 +146,7 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
@@ -156,7 +166,7 @@
         	<div data-role="content">
         		<p>This is not searchable at this time.</p>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
@@ -178,7 +188,7 @@
         			<p>There are no previous weigh-ins.</p>
         		</div>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
@@ -213,7 +223,7 @@
         			<a href="#previousWeight" data-role="button" id="previousButton" data-theme="a">Previous Weigh-Ins</a>
         		</div>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>
@@ -233,7 +243,7 @@
         	<div data-role="content">
         		<div class="ui-grid-a">
 	        		<div class="ui-block-a"><div class="ui-bar ui-bar-a">
-	        			<a href="http://g80349.D_Whimple/MIU/Whimple_David_Project2/Gold/addItem.html"data-theme="a">
+	        			<a href="../Gold/index.html"data-theme="a">
 		        		    <img src="images/goldMedal.jpg"/></br>
         					<h3>Gold App</h3>
         					<p>Link to Gold app</p>
@@ -262,7 +272,7 @@
         			</div></div>
         		</div>
         	</div>
-        	<div data-role="footer" data-position="fixed" > 
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
         		<div data-role="navbar">
         			<ul>
 	        			<li><a href="#home" data-role="button" id="homeFooter">Home</a></li>

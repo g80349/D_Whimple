@@ -126,3 +126,6 @@ div.ui-bar.ui-bar-a{
 a#previousButton{
 	margin-top: +40px;
 }
+form.ui-listview-filter{
+	margin-bottom: 30px;
+}

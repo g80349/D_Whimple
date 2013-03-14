@@ -114,3 +114,6 @@ a#startButton{
 	float: right;
 	margin-top: -55px;
 }
+form.ui-listview-filter{
+	margin-bottom: 10px;
+}
