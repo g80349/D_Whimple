@@ -1,6 +1,6 @@
 //David Whimple
 //MIU 1303
-//Project 1
+//Project 2
 //Javascript
 
 //Loads the DOM before page becomes functional
@@ -11,48 +11,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		return myElement;
 	};
 	
-	function searchLogs(){
-		myEle("main").style.display = "none";
-		myEle("search").style.display = "none";
-		myEle("browse").style.display = "none";
-		myEle("addNewFood").style.display = "inline";
-	}
-	
-	function getDates(){
-		myEle("main").style.display = "none";
-		myEle("search").style.display = "none";
-		myEle("browse").style.display = "none";		
-		myEle("addNewFood").style.display = "inline";	
-	}
-	
-	function getBreakfasts(){
-		myEle("main").style.display = "none";
-		myEle("search").style.display = "none";
-		myEle("browse").style.display = "none";	
-		myEle("addNewFood").style.display = "inline";
-	}
-
-	function getLunches(){
-		myEle("main").style.display = "none";
-		myEle("search").style.display = "none";
-		myEle("browse").style.display = "none";
-		myEle("addNewFood").style.display = "inline";
-	}
-
-	function getDinners(){
-		myEle("main").style.display = "none";
-		myEle("search").style.display = "none";
-		myEle("browse").style.display = "none";
-		myEle("addNewFood").style.display = "inline";
-	}
-
-	function getSnacks(){
-		myEle("main").style.display = "none";
-		myEle("search").style.display = "none";
-		myEle("browse").style.display = "none";
-		myEle("addNewFood").style.display = "inline";
-	}
-
 	
 	//Switch case for Display data link.
 		
@@ -339,7 +297,23 @@ window.addEventListener("DOMContentLoaded", function(){
 			localStorage.setItem(uniqueId, JSON.stringify(userFood));
 			alert("Log saved!");
 	};
-
+	
+/*	function searchLogs(){
+		var term = myEle("searchText").value;
+		if (term != ""){
+			for(i=0; i<localStorage.length; i++){
+				var key = localStorage.key(i);
+				var value = localStorage.getItem(key);
+				var obj = JSON.parse(value);
+				if(term === obj.select[3]){
+					for(x in obj){
+						console.log(obj[q][3]);
+					}
+				}
+			}
+		}
+	}
+*/
 	//Sets the range label to the value of the range slider
 	
 	function getServings(){
@@ -367,19 +341,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	range4.addEventListener("change",getServings);
 	var check1 = myEle("check1");
 	check1.addEventListener("click", addNotes);
-	var searchButton = myEle("searchButton");
-	searchButton.addEventListener("click",searchLogs);
-	var dateButton = myEle("dateButton");
-	dateButton.addEventListener("click", getDates);
-	var breakfastButton = myEle("breakfastButton");
-	breakfastButton.addEventListener("click", getBreakfasts);
-	var lunchButton = myEle("lunchButton");
-	lunchButton.addEventListener("click", getLunches);
-	var dinnerButton = myEle("dinnerButton");
-	dinnerButton.addEventListener("click", getDinners);
-	var snacksButton = myEle("snacksButton");
-	snacksButton.addEventListener("click", getSnacks);
-	
-	
+	var searchText = myEle("searchText");
+	searchText.addEventListener("search",searchLogs);
+		
 	
 });
