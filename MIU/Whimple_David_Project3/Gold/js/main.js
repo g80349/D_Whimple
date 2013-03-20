@@ -13,122 +13,102 @@ $('#addItem').on('pageinit', function(){
 			storeData(data);
 		}
 	});
+		var myDisplay = $("#displayPage");
+		
+		var clear = document.getElementById("clear");					
+		clear.addEventListener("click", clearLocal);  
+
 	
-function getCals(){
-	var totalCals = (range1.value * foodCals1.value)+(range2.value * foodCals2.value)+(range3.value * foodCals3.value)+(range4.value * foodCals4.value);
-	return totalCals;
-};
-
-function getImg(createSubList, foodName){
-	var createImageLi = document.createElement("li");
-	createSubList.appendChild(createImageLi);
-	var newImage =document.createElement("img");
-	var getSrc = newImage.setAttribute("src", "images/" + foodName + ".png");
-	createImageLi.appendChild(newImage);
-}
-
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-function autoFillLogs(){
-
+var autofillData = function(){
 	for(var x in json){
 		var uniqueId = Math.floor(Math.random()*1000000000);
 		localStorage.setItem(uniqueId, JSON.stringify(json[x]));
 	}
 };
 
-function getFood(){
-	control("on");
-	if(localStorage.length === 0){
-		alert("You have not logged any food so default logs were added.");
-		autoFillLogs();
-	}
-	for(i = 0; i < localStorage.length; i++){
-		var createDiv = document.createElement("div");
-		createDiv.setAttribute("uniqueId", "information");
-		var createList = document.createElement("ul");
-		createDiv.appendChild(createList);
-		document.body.appendChild(createDiv);
-		var createLi = document.createElement("li");
-		var linkList = document.createElement("li");
-		createList.appendChild(createLi);
-		var key = localStorage.key(i);
-		var value = localStorage.getItem(key);
-		var infoObj = JSON.parse(value);
-		var createSubList = document.createElement("ul");
-		createLi.appendChild(createSubList);
-		getImg(createSubList, infoObj.select[1]);
-		for(var x in infoObj){
-			var createSubLi = document.createElement("li");
-			createSubList.appendChild(createSubLi);
-			var subText = infoObj[x][0]+ " " + infoObj[x][1];
-			createSubLi.innerHTML = subText;
-			createSubList.appendChild(linkList);	
+var getData = function(){
+		if(localStorage.length === 0){
+			alert("You have not logged any food so default logs were added.");
+			autoFillLogs();
+		}
+		for(i = 0; i < localStorage.length; i++){
+			var createDiv = document.createElement("div");
+			div.localDisplay.appendChild(createDiv);
+			createDiv.setAttribute("uniqueId", "id");
+			var createList = document.createElement("ul");
+			createDiv.appendChild(createList);
+			var createLi = document.createElement("li");
+			var linkList = document.createElement("li");
+			createList.appendChild(createLi);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			var infoObj = JSON.parse(value);
+			var createSubList = document.createElement("ul");
+			createLi.appendChild(createSubList);
+			getImg(createSubList, infoObj.select[1]);
+			for(var x in infoObj){
+				var createSubLi = document.createElement("li");
+				createSubList.appendChild(createSubLi);
+				var subText = infoObj[x][0]+ " " + infoObj[x][1];
+				createSubLi.innerHTML = subText;
+				createSubList.appendChild(linkList);	
+			}	
+		createLinks(localStorage.key(i), linkList);
 		}	
-	createLinks(localStorage.key(i), linkList);
-	}	
 };
 
-function storeFood(key){
-	if(!key){
+var storeData = function(data){
+//	if(!key){
 		var uniqueId = Math.floor(Math.random()*1000000000);
-		}else{
-			uniqueId = key;
-		};
-	isChecked();
-	var userFood           = {};
-		userFood.date      = ["Date:", myEle("date").value];
-		userFood.weight    = ["Today's Weight:", myEle("weight").value]; 
-		userFood.select    = ["Meal:", myEle("select").value];
-		if(myEle("food1").value != ""){
-		userFood.food1	   = ["Food:", myEle("food1").value];
-		userFood.foodCals1 = ["Calories:", myEle("foodCals1").value];
-		userFood.range1    = ["Serving(s):", myEle("range1").value];
-		}
-		if(myEle("food2").value != ""){
-		userFood.food2	   = ["Food:", myEle("food2").value];
-		userFood.foodCals2 = ["Calories:", myEle("foodCals2").value];
-		userFood.range2    = ["Serving(s):", myEle("range2").value];
-		}
-		if(myEle("food3").value != ""){
-		userFood.food3	   = ["Food:", myEle("food3").value];
-		userFood.foodCals3 = ["Calories:", myEle("foodCals3").value];
-		userFood.range3    = ["Serving(s):", myEle("range3").value];
-		}
-		if(myEle("food4").value != ""){
-		userFood.food4	   = ["Food:", myEle("food4").value];
-		userFood.foodCals4 = ["Calories:", myEle("foodCals4").value];
-		userFood.range4    = ["Serving(s):", myEle("range4").value];
-		}
-		userFood.totalCal  = ["Total Calories:", getCals()];
-		userFood.check1    = ["", checkValue];
-		if(checkValue === "Notes:"){
-		userFood.notes     = ["", myEle("notes").value];
-		}
+//		}else{
+//			uniqueId = key;
+//		};
+		var userFood           = {};
+			userFood.date      = ["Date:", document.getElementById("date").value];
+			userFood.weight    = ["Today's Weight:", document.getElementById("weight").value]; 
+			userFood.select    = ["Meal:", document.getElementById("select").value];
+			if(document.getElementById("food1").value != ""){
+			userFood.food1	   = ["Food:", document.getElementById("food1").value];
+			userFood.foodCals1 = ["Calories:", document.getElementById("foodCals1").value];
+			userFood.range1    = ["Serving(s):", document.getElementById("range1").value];
+			}
+			if(document.getElementById("food2").value != ""){
+			userFood.food2	   = ["Food:", document.getElementById("food2").value];
+			userFood.foodCals2 = ["Calories:", document.getElementById("foodCals2").value];
+			userFood.range2    = ["Serving(s):", document.getElementById("range2").value];
+			}
+			if(document.getElementById("food3").value != ""){
+			userFood.food3	   = ["Food:", document.getElementById("food3").value];
+			userFood.foodCals3 = ["Calories:", document.getElementById("foodCals3").value];
+			userFood.range3    = ["Serving(s):", document.getElementById("range3").value];
+			}
+			if(document.getElementById("food4").value != ""){
+			userFood.food4	   = ["Food:", document.getElementById("food4").value];
+			userFood.foodCals4 = ["Calories:", document.getElementById("foodCals4").value];
+			userFood.range4    = ["Serving(s):", document.getElementById("range4").value];
+			}
+//			userFood.totalCal  = ["Total Calories:", getCals()];
+//			userFood.check1    = ["", checkValue];
+//			if(checkValue === "Notes:"){
+//			userFood.notes     = ["", myEle("notes").value];
+//			}
 		localStorage.setItem(uniqueId, JSON.stringify(userFood));
 		alert("Log saved!");
-};
+}; 
 
-function deleteLog(key){
-	var question = confirm("Are you sure you want to delete this log?");
-		if(question){
-			localStorage.removeItem(this.key);
-			alert("Log deleted.");
-			window.location.reload();
-		}else{
-			alert("Log was NOT deleted.");
-			return false;
-		}
+var	deleteItem = function (){
+			
 };
 					
-function clearInfo(){
+var clearLocal = function(){
 	var x = confirm("Are you sure you want to clear ALL of your food logs?");
 	if(x == true){
 		localStorage.clear();
 	}
-	
 };
 
 
