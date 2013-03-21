@@ -285,14 +285,12 @@
         	<form action="#" method="post" id="form1">
             	<fieldset>
            			<div data-role="fieldcontain">
-           				<h2 class="required">*This field is required</h2>
-           				<label for="date">Date:</label>
-           				<input type="date" name="date" id="date" placeholder="mm/dd/yyyy" required="date"/>
+           				<label for="date">Date: *This field is required</label>
+           				<input type="date" name="date" id="date" placeholder="mm/dd/yyyy" class="required"/>
            			</div>
                		<div data-role="fieldcontain">
-               			<h2 class="required">*This field is required</h2>
-           				<label for="date">Today's Weight:</label>
-           				<input type="number" name="weight" id="weight" placeholder="lbs." required=""/>
+           				<label for="date">Today's Weight: *This field is required</label>
+           				<input type="number" name="weight" id="weight" placeholder="lbs." class="required"/>
            			</div>
            			<div data-role="fieldcontain">
            				<label for="select"> Meal Type:</label>
@@ -303,39 +301,62 @@
                				<option value="Snacks">Snacks</option>
            				</select>
            			</div>
-           			<div data-role="fieldcontain">
-           				<h2 class="required">*This field is required</h2>
- 	     				<label for="food1">Food:</label>
- 	     				<input type="text" id="food1" required="text" placeholder="2 Egg White Omlet"/>
- 	     				<label for="foodCals1">Calories:</label><input type="text" id="foodCals1" required="number"/>
- 	     				<input type="range" name="range1" id="range1" value="1" min="1" max="15" required="number"/>
-           			</div>
- 	     			<div data-role="fieldcontain">
- 	     				<label for="food2">Food:</label>
- 	     				<input type="text" id="food2" placeholder="Turkey Bacon"/>
- 	     				<label for="foodCals2">Calories:</label><input type="text" id="foodCals2"/>
- 	     				<input type="range" name="range2" id="range2" value="0" min="0" max="15"/>
-           			</div>
-           			<div data-role="fieldcontain">
- 	     				<label for="food3">Food:</label>
- 	     				<input type="text" id="food3" placeholder="Grapes"/>
- 	     				<label for="foodCals3">Calories:</label><input type="text" id="foodCals3"/>
- 	     				<input type="range" name="range3" id="range3" value="0" min="0" max="15"/>
-           			</div>
-           			<div data-role="fieldcontain">
- 	     				<label for="food4">Food:</label>
- 	     				<input type="text" id="food4" placeholder="Cottage Cheese"/>
- 	     				<label for="foodCals4">Calories:</label><input type="text" id="foodCals4"/>
- 	     				<input type="range" name="range4" id="range4" value="0" min="0" max="15"/>
-           			</div>
+				<div data-role="fieldcontain">
+					<label for="food1">Food: *This field is required</label>
+					<input type="text" id="food1" name="food1" placeholder="2 Egg White Omlet" class="required"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="foodCals1">Calories: *This field is required</label>
+					<input type="text" id="foodCals1" name="foodCals1" class="required"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="serv1">Servings: *This field is required</label>
+					<input type="text" name="serv1" id="serv1" class="required"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="food2">Food:</label>
+					<input type="text" id="food2" name="food2"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="foodCals2">Calories:</label>
+					<input type="text" id="foodCals2" name="foodCals2"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="serv2">Servings:</label>
+					<input type="text" name="serv2" id="serv2"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="food3">Food:</label>
+					<input type="text" id="food3" name="food3"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="foodCals3">Calories:</label>
+					<input type="text" id="foodCals3" name="foodCals3"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="serv3">Servings:</label>
+					<input type="text" name="serv3" id="serv3"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="food4">Food:</label>
+					<input type="text" id="food4" name="food4"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="foodCals4">Calories:</label>
+					<input type="text" id="foodCals4" name="foodCals4"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="serv4">Servings:</label>
+					<input type="text" name="serv4" id="serv4"/>
+				</div>
            			<div data-role="fieldcontain">
            				<label for="notes">Notes:</label>
-           				<select data-role="slider" id="notes">
+           				<select data-role="slider" for="notes">
                				<option value="no">No</option>	
                				<option value="yes">Yes</option>
            				</select>
            			</div>
-           			<div data-role="fieldcontain">
+           			<div data-role="fieldcontain" id="notes">
            				<textarea></textarea>
 	           		<div data-role="fieldcontain">
 	     	     		<input type="submit" value="Log Food" id="food" data-theme="b"/>
