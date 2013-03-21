@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--David Whimple-->
+<!--MIU 1303-->
+<!--Project 2 Bronze-->
+
+<html>
+    <head>
+		<meta charset="utf-8"/>
+        <meta name="description" content="calorie counting and weight loss"/>
+        <meta name="keywords" content="calorie, calorie counting, weight loss"/>
+        <meta name="robots" content="index,follow"/>
+        <title>Calorie Counter</title>
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="cleartype" content="on">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+        <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+        <script src="js/libs/modernizr.custom.min.js"></script>
+    </head>
+    <body>
+<!--Main page with CTA and search-->
+    	<div data-role="page" id="home" data-theme="e" data-transition="slide">
+        	<div data-role="header" data-position="fixed" data-theme="a">
+            	<h1 >Calorie Counter</h1>	
+            </div>
+            <div data-role="content" id="cta">
+        		<h2 id="health">Help yourself feel healthy and eat healthy everyday...</h2>
+        		<img src="images/CTA.jpg" id="CTA">          
+        		<a href="addItem.html" data-ajax="false" data-role="button" id="startButton"data-theme="a">Get Started</a>
+        	</div>
+          		<div>
+          			<h2 id="h2">Browse By</h2>
+          		</div>
+          	<div id="browse">
+          		<ul data-role="listview" data-theme="a" data-filter="true">
+          			<li>
+          				<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+	          				<h3>Date</h3>
+	          				<p>This is not searchable at this time.</p>
+	          			</div>
+          			</li>
+          			<li>
+	          			<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+		          			<h3>Breakfast</h3>
+		          			<p>This is not searchable at this time.</p>
+		          		</div>
+          			</li>
+          			<li>
+          				<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+	          				<h3>Lunch</h3>
+	          				<p>This is not searchable at this time.</p>
+	          			</div>
+          			</li>
+          			<li>
+	          			<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+		          			<h3>Dinner</h3>
+		          			<p>This is not searchable at this time.</p>
+		          		</div>
+          			</li>
+		          	<li>
+		          		<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">
+			          		<h3>Snacks</h3>
+			          		<p>This is not searchable at this time.</p>
+			          	</div>
+		          	</li>
+          		</ul>
+          	</div>
+          	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" class="ui-btn-active">Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+    	</div>
+<!--Date page-->
+    	<div data-role="page" id="date" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Date Entered</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<p>There are not any dates searchable at this time.</p>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+<!--Breakfast page-->
+        <div data-role="page" id="breakfast" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Breakfast</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<p>This is not searchable at this time.</p>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+<!--Lunch page-->
+    	<div data-role="page" id="lunch" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Lunch</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<p>This is not searchable at this time.</p>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+<!--Dinner page-->
+    	<div data-role="page" id="dinner" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Dinner</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<p>This is not searchable at this time.</p>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+<!--Snacks page-->
+    	<div data-role="page" id="snacks" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Snacks</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<p>This is not searchable at this time.</p>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+<!--Previous weigh-ins page-->
+        <div id="previousWeight" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Previous Weigh-Ins</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<div>
+        			<p>There are no previous weigh-ins.</p>
+        		</div>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+
+<!--Weight button on navbar-->
+        <div id="weightTrack" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>Weigh-In</h1>
+        		</div>
+        	</div>
+        	<div data-role="content" >
+        		<div>
+        			<h2>Last 7 days...</h2>
+        		</div>
+        		<div data-role="listview" data-theme="a">
+        			<ul>
+        				<li><h3>Wednesday</h3><p data-filter="true">3-13-13: 210 lbs.</p></li>
+        				<li><h3>Tuesday</h3><p>3-12-13: 212 lbs.</p></li>
+        				<li><h3>Monday</h3><p>3-11-13: 212 lbs.</p></li>
+        				<li><h3>Sunday</h3><p>3-10-13: 215 lbs.</p></li>
+        				<li><h3>Saturday</h3><p>3-9-13: 214 lbs.</p></li>
+        				<li><h3>Friday</h3><p>3-8-13: 216 lbs.</p></li>
+        				<li><h3>Thursday</h3><p>3-7-13: 217 lbs.</p></li>
+        			</ul>
+        		</div>
+        		<div>
+        			<a href="#previousWeight" data-role="button" id="previousButton" data-theme="a">Previous Weigh-Ins</a>
+        		</div>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" class="ui-btn-active">Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button" >About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+<!--About button on navbar-->
+        <div id="about" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="e">
+        	<div data-role="header" data-position="fixed">
+        		<div>
+        			<h1>About</h1>
+        		</div>
+        	</div>
+        	<div data-role="content">
+        		<div class="ui-grid-a">
+	        		<div class="ui-block-a"><div class="ui-bar ui-bar-a">
+	        			<a href="../Gold/index.html" data-ajax="false" data-theme="a">
+		        		    <img src="images/goldMedal.jpg"/></br>
+        					<h3>Gold App</h3>
+        					<p>Link to Gold app</p>
+        				</a>
+        			</div></div>
+        			<div class="ui-block-b"><div class="ui-bar ui-bar-a">
+        				<a href="https://github.com/g80349/D_Whimple/blob/gh-pages/MIU/Whimple_David_Project2/Gold/index.html" data-theme="a">
+        					<img src="images/gold.jpg"/></br>
+        					<h3 id="goldh3">Gold gh-page</h3>
+        					<p id="goldp">Link to Gold gh-page</p>
+        				</a>
+        			</div></div>
+	        		<div class="ui-block-a"><div class="ui-bar ui-bar-a">
+	        			<a href="https://github.com/g80349/D_Whimple/blob/gh-pages/MIU/Whimple_David_Project2/Bronze/index.html"data-theme="a">
+        					<img src="images/bronze.jpg"/></br>
+        					<h3>Bronze gh-page</h3>
+        					<p>Link to Bronze gh-page</p>
+        				</a>
+        			</div></div>
+        			<div class="ui-block-b"><div class="ui-bar ui-bar-a">
+        				<a href="https://github.com/g80349/D_Whimple/tree/Working-Copy/MIU"data-theme="a">
+        					<img src="images/repo.jpg"/></br>
+        					<h3>Repository</h3>
+        					<p>Link to Github Repository</p>
+        				</a>
+        			</div></div>
+        		</div>
+        	</div>
+        	<div data-role="footer" data-position="fixed" data-id="homeFooter"> 
+        		<div data-role="navbar">
+        			<ul>
+	        			<li><a href="#home" data-role="button" >Home</a></li>
+	        			<li><a href="#weightTrack" data-role="button" >Weigh-In</a></li>
+	        			<li><a href="#about" data-role="button"  class="ui-btn-active">About</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+    </body>
+</html>
