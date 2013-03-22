@@ -36,13 +36,10 @@ var getData = function(){
 			alert("You have not logged any food so default logs were added.");
 			autofillData();
 		}
-			var createDiv = document.createElement("div");
-			createDiv.setAttribute("id", "uniqueId");
 			var display = document.getElementById("localDisplay");
 		for(i = 0; i < localStorage.length; i++){
-			display.appendChild(createDiv);
 			var createList = document.createElement("ul");
-			createDiv.appendChild(createList);
+			display.appendChild(createList);
 			var createLi = document.createElement("li");
 			var linkList = document.createElement("li");
 			createList.appendChild(createLi);
@@ -55,22 +52,22 @@ var getData = function(){
 			for(var x in infoObj){
 				var createSubLi = document.createElement("li");
 				createSubList.appendChild(createSubLi);
-
-				var subText = infoObj[x][0]+ " " + infoObj[x][1];
+				var subText = infoObj[x]+ " " + infoObj.value[x];
 				createSubLi.innerHTML = subText;
 				createSubList.appendChild(linkList);
 			}
-//		createLinks(localStorage.key(i), linkList);
+//		createLinks(localStorage.key(i), linkList);*/
 		}
 };
 
 
 var storeData = function(data){
-	if(!key){
+//	if(!key){
+		console.log(data)
 		var uniqueId = Math.floor(Math.random()*1000000000);
-		}else{
-			uniqueId = key;
-		};
+//		}else{
+//			uniqueId = key;
+//		};
 		localStorage.setItem(uniqueId, JSON.stringify(data));
 		alert("Log saved!");
 };
