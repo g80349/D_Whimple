@@ -10,7 +10,6 @@ $('#addItem').on('pageinit', function(){
 			},
 			submitHandler: function() {
 		var data = myForm.serializeArray();
-<<<<<<< HEAD
 			storeData(data);
 		}
 	});
@@ -21,7 +20,6 @@ $('#addItem').on('pageinit', function(){
 		displayData.addEventListener("click", getData);
 
 
-=======
 			storeFood(data);
 		}
 	});
@@ -79,7 +77,6 @@ $('#addItem').on('pageinit', function(){
 
 
 
->>>>>>> Working-Copy
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
@@ -92,7 +89,6 @@ var autofillData = function(){
 };
 
 var getData = function(){
-<<<<<<< HEAD
 	if(localStorage.length === 0){
 		alert("You have not logged any food so default logs were added.");
 		autofillData();
@@ -144,7 +140,6 @@ var	deleteItem = function (){
 			alert("Log was NOT deleted.");
 			return false;
 		}
-=======
 		if(localStorage.length === 0){
 			alert("You have not logged any food so default logs were added.");
 			autofillData();
@@ -191,22 +186,15 @@ var	deleteItem = function (){
 				alert("Log was NOT deleted.");
 				return false;
 			}
->>>>>>> Working-Copy
 };
 
 var clearLocal = function(){
 	var x = confirm("Are you sure you want to clear ALL of your food logs?");
 	if(x == true){
 		localStorage.clear();
-<<<<<<< HEAD
-=======
 		window.location.reload();
->>>>>>> Working-Copy
 	}
 };
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> Working-Copy
