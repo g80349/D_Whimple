@@ -1,7 +1,7 @@
 /*
 David Whimple
 MIU  1303
-Project 2 
+Project 4
 CSS Stylesheet*/
 
 body{
@@ -12,11 +12,11 @@ h1{
 	text-align: center;
 	font-size: 16px;
 }
-h1#h1{	
+h1#h1{
 	padding-top:15px;
 	font-size: 30px;
 	text-align: center;
-	color:white;	
+	color:white;
 	border-radius: 8px;
 	}
 h2{
@@ -35,7 +35,7 @@ img#CTA{
 	height: 125px;
 	border-radius: 8px;
 }
-fieldset{	
+fieldset{
 	background-color: #a8a64a;
 	font-family: fantasy;
 	font-size: 14px;
@@ -48,7 +48,7 @@ ul#error{
 input{
 	height: 14px;
     background-color:white;
-    border: 1px solid black;		
+    border: 1px solid black;
     border-radius: 8px;
     font-size: 10px;
     margin:1px;
@@ -74,7 +74,7 @@ input#food{
 	font-size: 15px;
 	padding-top: 5px;
 	background-color:#dfff39;
-	font-family: fantasy;	
+	font-family: fantasy;
 }
 input#range1Value,#range2Value,#range3Value,#range4Value{
 	width:20px;
@@ -95,18 +95,18 @@ select{
 textarea#notes{
 	width: 80%;
 	height: 50px;
-    border: 1px solid black;		
+    border: 1px solid black;
     -webkit-border-radius: 8px;
     border-radius: 8px;
     -webkit-box-shadow: 1px 1px 1px #525252;
-    font-size: 10px;   
+    font-size: 10px;
 }
 div.anchor{
 	text-align: center;
-	border: none;	
+	border: none;
 	background-color: #7f8a29;
 }
-a{	
+a{
 	color: #c4e910;
 	margin: 5px;
 }
