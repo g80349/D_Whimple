@@ -49,6 +49,7 @@ var getData = function(){
 		var createSubList = document.createElement("ul");
 		createLi.appendChild(createSubList);
 //		getImg(createSubList, infoObj.select[1]);
+		console.log(infoObj.name);
 		for(var x in infoObj){
 			var createSubLi = document.createElement("li");
 			createSubList.appendChild(createSubLi);
