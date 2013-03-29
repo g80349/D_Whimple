@@ -15,19 +15,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="cleartype" content="on">
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
-        <link rel="stylesheet" href="css/styles.css" type="text/css"/>
         <link rel="stylesheet" href="css/themes/CalorieCounter.min.css" />
         <script src="js/libs/modernizr.custom.min.js"></script>
     </head>
     <body>
 <!--Main page with CTA and search-->
-    	<div data-role="page" id="home1" data-theme="a">
-        	<div data-role="header" data-position="fixed" data-theme="a">
-            	<h1 >Calorie Counter</h1>
-            </div>
-            <div data-role="content" id="cta1">
-        		<h2 id="health">Help yourself feel healthy and eat healthy everyday...</h2>
-        		<img src="images/CTA.jpg" id="CTA">
     	<div data-role="page" id="home1" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed" data-theme="a">
             	<a href="#home" id="logo"><img src="images/branding.png"/></a>
@@ -42,7 +34,6 @@
           			<h2 id="h2">Browse By</h2>
           		</div>
           	<div id="browse">
-          		<ul data-role="listview" data-inset="true" data-filter="true" data-theme="b">
           		<ul data-role="listview" data-inset="true" data-filter="true" data-theme="a">
           			<li><a href="#date1" id="dateButton">Date</a></li>
           			<li><a href="#breakfast1"id="breakfastButton">Breakfast</a></li>
@@ -62,9 +53,6 @@
         	</div>
     	</div>
 <!--Date page-->
-    	<div data-role="page" id="date1" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
     	<div data-role="page" id="date1" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -86,9 +74,6 @@
         	</div>
         </div>
 <!--Breakfast page-->
-        <div data-role="page" id="breakfast1" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
         <div data-role="page" id="breakfast1" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -110,9 +95,6 @@
         	</div>
         </div>
 <!--Lunch page-->
-    	<div data-role="page" id="lunch1" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
     	<div data-role="page" id="lunch1" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -134,9 +116,6 @@
         	</div>
         </div>
 <!--Dinner page-->
-    	<div data-role="page" id="dinner1" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
     	<div data-role="page" id="dinner1" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -158,9 +137,6 @@
         	</div>
         </div>
 <!--Snacks page-->
-    	<div data-role="page" id="snacks1" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
     	<div data-role="page" id="snacks1" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -182,9 +158,6 @@
         	</div>
         </div>
 <!--Previous weigh-ins page-->
-        <div id="previousWeight1" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
         <div id="previousWeight1" data-role="page" data-transition="slide" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -209,9 +182,6 @@
         </div>
 
 <!--Weight button on navbar-->
-        <div id="weightTrack1" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
         <div id="weightTrack1" data-role="page" data-theme="a">
         	<div data-role="header" style="background-image:url(images/CalorieCounter.png)" data-position="fixed">
         		<div>
@@ -223,31 +193,6 @@
         		<div>
         			<h2>Last 7 days...</h2>
         		</div>
-        		<div data-role="collapsible" data-collapsed="false" data-theme="b">
-        			<h3>Wednesday</h3>
-        			<p data-filter="true">3-13-13: 210 lbs.</p>
-        		</div>
-        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
-        			<h3>Tuesday</h3>
-        			<p>3-12-13: 212 lbs.</p>
-        		</div>
-        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
-        			<h3>Monday</h3>
-        			<p>3-11-13: 212 lbs.</p>
-        		</div>
-        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
-        			<h3>Sunday</h3>
-        			<p>3-10-13: 215 lbs.</p>
-        		</div>
-        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
-        			<h3>Saturday</h3>
-        			<p>3-9-13: 214 lbs.</p>
-        		</div>
-        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
-        			<h3>Friday</h3>
-        			<p>3-8-13: 216 lbs.</p>
-        		</div>
-        		<div data-role="collapsible" data-collapsed="true" data-theme="b">
         		<div data-role="collapsible" data-collapsed="false" data-theme="a">
         			<h3>Wednesday</h3>
         			<p data-filter="true">3-13-13: 210 lbs.</p>
@@ -291,9 +236,6 @@
         	</div>
         </div>
 <!--About button on navbar-->
-        <div id="about1" data-role="page" data-transition="slide" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
         <div id="about1" data-role="page" data-transition="slide" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed">
         		<div>
@@ -345,8 +287,6 @@
         </div>
 
 <!--Add item page-->
-    	<div data-role="page" id="addItem" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed" data-theme="a">
     	<div data-role="page" id="addItem" style="background-image:url(images/CalorieCounter.png)" data-theme="a">
         	<div data-role="header" data-position="fixed" data-theme="a">
         		<a href="#home1" id="logo"><img src="images/branding.png" /></a>
@@ -356,15 +296,6 @@
             	<fieldset>
            			<div data-role="fieldcontain">
            				<label for="date">Date: *Required</label>
-           				<input type="date" name="date" id="date" placeholder="mm/dd/yyyy" class="required"/>
-           			</div>
-               		<div data-role="fieldcontain">
-           				<label for="date">Today's Weight: *Required</label>
-           				<input type="number" name="weight" id="weight" placeholder="lbs." class="required"/>
-           			</div>
-           			<div data-role="fieldcontain">
-           				<label for="select"> Meal Type:</label>
-           				<select name="select" id="select" data-native-menu="false">
            				<input type="date" name="date" id="date" placeholder="mm/dd/yyyy" data-theme="b" class="required"/>
            			</div>
                		<div data-role="fieldcontain">
@@ -382,55 +313,6 @@
            			</div>
 				<div data-role="fieldcontain">
 					<label for="food1">Food: *Required</label>
-					<input type="text" id="food1" name="food1" placeholder="Egg Whites" class="required"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="foodCals1">Calories: *Required</label>
-					<input type="text" id="foodCals1" name="foodCals1" placeholder="60" class="required"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="serv1">Servings: *Required</label>
-					<input type="text" name="serv1" id="serv1" placeholder="2" class="required"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="food2">Food:</label>
-					<input type="text" id="food2" name="food2"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="foodCals2">Calories:</label>
-					<input type="text" id="foodCals2" name="foodCals2"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="serv2">Servings:</label>
-					<input type="text" name="serv2" id="serv2"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="food3">Food:</label>
-					<input type="text" id="food3" name="food3"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="foodCals3">Calories:</label>
-					<input type="text" id="foodCals3" name="foodCals3"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="serv3">Servings:</label>
-					<input type="text" name="serv3" id="serv3"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="food4">Food:</label>
-					<input type="text" id="food4" name="food4"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="foodCals4">Calories:</label>
-					<input type="text" id="foodCals4" name="foodCals4"/>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="serv4">Servings:</label>
-					<input type="text" name="serv4" id="serv4"/>
-				</div>
-           			<div data-role="fieldcontain">
-           				<label for="notes">Notes:</label>
-           				<select data-role="slider" for="notes">
 					<input type="text" id="food1" name="food1" placeholder="Egg Whites" data-theme="b" class="required"/>
 				</div>
 				<div data-role="fieldcontain">
@@ -485,7 +367,6 @@
            				</select>
            			</div>
            			<div data-role="fieldcontain" id="notes">
-           				<textarea></textarea>
            				<textarea  data-theme="b"></textarea>
 	           		<div data-role="fieldcontain">
 	     	     		<input type="submit" value="Log Food" id="food" data-theme="b"/>
@@ -509,9 +390,6 @@
 	    		</div>
 	    	</div>
     	</div>
-    	<div data-role="page" id="displayPage" data-add-back-btn="true" data-theme="a">
-        	<div data-role="header" data-position="fixed">
-        		<div>
 
 <!-- Local Storage -->
 
@@ -534,7 +412,6 @@
         		</div>
         	</div>
         </div>
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
         <script src="js/libs/jquery.validate.min.js"

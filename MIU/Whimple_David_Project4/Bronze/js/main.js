@@ -5,15 +5,15 @@
 
 //Loads the DOM before page becomes functional
 
-window.addEventListener("DOMContentLoaded", function(){		
+window.addEventListener("DOMContentLoaded", function(){
 	function myEle(x){
 		var myElement = document.getElementById(x);
 		return myElement;
 	};
-	
-	
+
+
 	//Switch case for Display data link.
-		
+
 	function control(x){
 		switch(x){
 			case "on":
@@ -27,13 +27,13 @@ window.addEventListener("DOMContentLoaded", function(){
 			myEle("addNewFood").style.display = "none";
 				break;
 			default:
-		};		
+		};
 		return false;
-	
+
 	};
-	
+
 	//Create new form for local storage items.
-	
+
 	function getFood(){
 		control("on");
 		if(localStorage.length === 0){
@@ -60,13 +60,13 @@ window.addEventListener("DOMContentLoaded", function(){
 				createSubList.appendChild(createSubLi);
 				var subText = infoObj[x][0]+ " " + infoObj[x][1];
 				createSubLi.innerHTML = subText;
-				createSubList.appendChild(linkList);	
-			}	
+				createSubList.appendChild(linkList);
+			}
 		createLinks(localStorage.key(i), linkList);
-		}	
+		}
 	};
-	
-	
+
+
 	//
 
 	function getImg(createSubList, foodName){
@@ -77,19 +77,19 @@ window.addEventListener("DOMContentLoaded", function(){
 		createImageLi.appendChild(newImage);
 	}
 
-	
+
 	//If there are not any food logs present in local storage this will supply local sorage with logs for testing purposes.
-	
+
 	function autoFillLogs(){
-	
+
 		for(var x in json){
 			var uniqueId = Math.floor(Math.random()*1000000000);
 			localStorage.setItem(uniqueId, JSON.stringify(json[x]));
 		}
 	};
-	
+
 	//Create Edit and Delete links.
-	
+
 	function createLinks(key,linkList){
 		var edit = document.createElement("a");
 		edit.href = "#";
@@ -98,10 +98,10 @@ window.addEventListener("DOMContentLoaded", function(){
 		edit.addEventListener("click", editLog);
 		edit.innerHTML = editName;
 		linkList.appendChild(edit);
-		
+
 		var breakLinks = document.createElement("br");
 		linkList.appendChild(breakLinks);
-				
+
 		var del = document.createElement("a");
 		del.href = "#";
 		del.key = key;
@@ -110,9 +110,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		del.innerHTML = delName;
 		linkList.appendChild(del);
 	};
-	
+
 	//Get localStorage and populate previous fields.
-	
+
 	function editLog(){
 		var val = localStorage.getItem(this.key);
 		var userFood = JSON.parse(val);
@@ -158,20 +158,20 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 	//Checks to see if specific inputs are empty.
-	
+
 	function verify(eventData){
 		var getDate = myEle("date");
 		var getWeight = myEle("weight");
 		var getFood1 = myEle("food1");
 		var getFoodCals1 = myEle("foodCals1");
 		var messages = [];
-		
+
 		myEle("error").innerHTML = "";
 		getDate.style.border = "1px solid black";
 		getWeight.style.border = "1px solid black";
 		getFood1.style.border = "1px solid black";
 		getFoodCals1.style.border = "1px solid black";
-		
+
 		if(getDate.value === "" || getDate.value === "mm/dd/yyyy"){
 			var dateError = "Please enter a date.";
 			getDate.style.border = "1px solid #dfff39";
@@ -204,9 +204,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			storeFood(this.key);
 		}
 	};
-	
+
 	//Delete specific log in local storage.
-	
+
 	function deleteLog(key){
 		var question = confirm("Are you sure you want to delete this log?");
 			if(question){
@@ -218,26 +218,26 @@ window.addEventListener("DOMContentLoaded", function(){
 				return false;
 			}
 	};
-	
+
 	//Clear all of local storage.
-		
+
 	function clearInfo(){
 		var x = confirm("Are you sure you want to clear ALL of your food logs?");
 		if(x == true){
 			localStorage.clear();
 		}
-		
+
 	};
-	
+
 	//Add up all calories and serving sizes for the total calories
-	
+
 	function getCals(){
     	var totalCals = (range1.value * foodCals1.value)+(range2.value * foodCals2.value)+(range3.value * foodCals3.value)+(range4.value * foodCals4.value);
     	return totalCals;
 	};
-	
+
 	//Looks to see if notes checkbox is checked and assigns a value.
-	
+
 	function isChecked(){
 		if(myEle("check1").checked){
 			checkValue = "Notes:";
@@ -245,9 +245,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			checkValue = "";
 		}
 	};
-	
+
 	//When checked textarea appears. When unchecked textarea disappears.
-	
+
 	function addNotes(){
 		if(myEle("check1").checked){
 			myEle("notes").style.display = "inline";
@@ -255,9 +255,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			myEle("notes").style.display = "none";
 		}
 	};
-	
+
 	//Stores all information as strings in local storage  and gives a and ID unless it already has one.
-	
+
 	function storeFood(key){
 		if(!key){
 			var uniqueId = Math.floor(Math.random()*1000000000);
@@ -267,7 +267,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		isChecked();
 		var userFood           = {};
 			userFood.date      = ["Date:", myEle("date").value];
-			userFood.weight    = ["Today's Weight:", myEle("weight").value]; 
+			userFood.weight    = ["Today's Weight:", myEle("weight").value];
 			userFood.select    = ["Meal:", myEle("select").value];
 			if(myEle("food1").value != ""){
 			userFood.food1	   = ["Food:", myEle("food1").value];
@@ -297,22 +297,22 @@ window.addEventListener("DOMContentLoaded", function(){
 			localStorage.setItem(uniqueId, JSON.stringify(userFood));
 			alert("Log saved!");
 	};
-	
+
 	//Sets the range label to the value of the range slider
-	
+
 	function getServings(){
 		myEle("range1Value").innerHTML = (range1.value + " serving(s)");
 		myEle("range2Value").innerHTML = (range2.value + " serving(s)");
 		myEle("range3Value").innerHTML = (range3.value + " serving(s)");
 		myEle("range4Value").innerHTML = (range4.value + " serving(s)");
 	};
-	
+
 	//Event listeners for button, links, and sliders
-	
+
 	var submitFood = myEle("food");
 	submitFood.addEventListener("click", verify);
-	var clear = myEle("clear");					
-	clear.addEventListener("click", clearInfo);  
+	var clear = myEle("clear");
+	clear.addEventListener("click", clearInfo);
 	var displayData = myEle("displayData");
 	displayData.addEventListener("click", getFood);
 	var range1 = myEle("range1");
@@ -325,6 +325,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	range4.addEventListener("change",getServings);
 	var check1 = myEle("check1");
 	check1.addEventListener("click", addNotes);
-		
-	
+
+
 });
