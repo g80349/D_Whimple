@@ -4,3 +4,13 @@ ASDI 1305
 Project 1
 CSS Stylesheet
 */
+
+div{
+	text-align: center;
+}
+img{
+	width: 260px;
+}
+label{
+	float: left;
+}

@@ -11,12 +11,96 @@
         <meta name="MobileOptimized" content="320"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="cleartype" content="on">
-		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" />
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	<body>
-
+    	<section data-role="page" id="homePage" >
+        	<header data-role="header" data-position="fixed">
+            	<h1>Calorie Counter</h1>
+        	</header>
+            <div data-role="content">
+        		<h2>Help yourself feel healthy and eat healthy everyday!</h2>
+        		<img src="images/CTA.jpg">
+        		<a href="#addItemPage" data-role="button">Get Started</a>
+            </div>
+          	<div data-role="footer" data-position="fixed">
+        		<nav data-role="navbar">
+        			<ul>
+	        			<li><a href="#homePage" data-role="button" class="ui-btn-active">Home</a></li>
+	        			<li><a href="#addItemPage" data-role="button">Daily Log</a></li>
+	        			<li><a href="#displayPage" data-role="button" >View Logs</a></li>
+        			</ul>
+        		</nav>
+        	</div>
+    	</section>
+    	<section data-role="page" id="addItemPage">
+    		<header data-role="header">
+    			<h1>Daily Log</h1>
+    		</header>
+        	<form id="form">
+            	<fieldset>
+           			<div data-role="fieldcontain">
+           				<label for="date">Date:</label><br>
+           				<input type="date" name="Date:" placeholder="mm/dd/yy"/>
+           			</div>
+               		<div data-role="fieldcontain">
+           				<label for="weight">Today's Weight:</label><br>
+           				<input type="number" name="Weight:" placeholder="lbs."/>
+           			</div>
+           			<div data-role="fieldcontain">
+           				<label for="select"> Meal Type:</label><br>
+           				<select name="Meal Type:" data-native-menu="false">
+       						<option value="Breakfast">Breakfast</option>
+               				<option value="Lunch">Lunch</option>
+               				<option value="Dinner">Dinner</option>
+               				<option value="Snacks">Snacks</option>
+           				</select>
+           			</div>
+					<div data-role="fieldcontain">
+						<label for="food1">Food:</label><br>
+						<input type="text" name="Food:" placeholder="Egg Whites"/>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="foodCals1">Calories:</label><br>
+						<input type="text" name="Calories:" placeholder="60"/>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="serv1">Servings:</label><br>
+						<input type="text" name="Servings:"placeholder="2"/>
+					</div>
+     	     		<input type="button" value="Add Another Item"/>
+     	     		<input type="submit"  value="Log Entry"/>
+            	</fieldset>
+        	</form>
+          	<div data-role="footer" data-position="fixed">
+        		<nav data-role="navbar">
+        			<ul>
+	        			<li><a href="#homePage" data-role="button" class="ui-btn-active">Home</a></li>
+	        			<li><a href="#addItemPage" data-role="button">Daily Log</a></li>
+	        			<li><a href="#displayPage" data-role="button" >View Logs</a></li>
+        			</ul>
+        		</nav>
+        	</div>
+    	</section>
+		<section data-role="page" id="displayPage">
+			<header data-role="header">
+				<h1>Daily Log</h1>
+			</header>
+			<div data-role="content">
+			</div>
+          	<div data-role="footer" data-position="fixed">
+        		<nav data-role="navbar">
+        			<ul>
+	        			<li><a href="#homePage" data-role="button" class="ui-btn-active">Home</a></li>
+	        			<li><a href="#addItemPage" data-role="button">Daily Log</a></li>
+	        			<li><a href="#displayPage" data-role="button" >View Logs</a></li>
+        			</ul>
+        		</nav>
+        	</div>
+		</section>
 		<script src="js/libs/jquery-1.9.1.min.js"></script>
 		<script src="js/libs/jquery.mobile-1.3.1.min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
