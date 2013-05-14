@@ -41,16 +41,16 @@
         	<form id="form">
             	<fieldset>
            			<div data-role="fieldcontain">
-           				<label for="date">Date:</label><br>
-           				<input type="date" name="Date:" placeholder="mm/dd/yy"/>
+           				<label for="date">Date</label><br>
+           				<input id="date" type="date" name="Date:" placeholder="mm/dd/yy"/>
            			</div>
                		<div data-role="fieldcontain">
-           				<label for="weight">Today's Weight:</label><br>
-           				<input type="number" name="Weight:" placeholder="lbs."/>
+           				<label for="weight">Today's Weight</label><br>
+           				<input id="weight" type="number" name="Weight:" placeholder="lbs."/>
            			</div>
            			<div data-role="fieldcontain">
-           				<label for="select"> Meal Type:</label><br>
-           				<select name="Meal Type:" data-native-menu="false">
+           				<label for="select"> Meal Type</label><br>
+           				<select id="select" name="Meal Type:" data-native-menu="false">
        						<option value="Breakfast">Breakfast</option>
                				<option value="Lunch">Lunch</option>
                				<option value="Dinner">Dinner</option>
@@ -58,19 +58,19 @@
            				</select>
            			</div>
 					<div data-role="fieldcontain">
-						<label for="food1">Food:</label><br>
-						<input type="text" name="Food:" placeholder="Egg Whites"/>
+						<label for="food1">Food</label><br>
+						<input type="text" id="food1" name="Food:" placeholder="Egg Whites"/>
 					</div>
 					<div data-role="fieldcontain">
-						<label for="foodCals1">Calories:</label><br>
-						<input type="text" name="Calories:" placeholder="60"/>
+						<label for="foodCals1">Calories</label><br>
+						<input type="text" id="foodCals1" name="Calories:" placeholder="60"/>
 					</div>
 					<div data-role="fieldcontain">
-						<label for="serv1">Servings:</label><br>
-						<input type="text" name="Servings:"placeholder="2"/>
+						<label for="serv1">Servings</label><br>
+						<input type="text" id="serv1" name="Servings:"placeholder="2"/>
 					</div>
-     	     		<input type="button" value="Add Another Item"/>
-     	     		<input type="submit"  value="Log Entry"/>
+     	     		<input id="logFood"type="submit"  value="Log Entry"/>
+     	     		<input id="clear"type="submit"  value="Clear Logs"/>
             	</fieldset>
         	</form>
           	<div data-role="footer" data-position="fixed">
@@ -87,7 +87,7 @@
 			<header data-role="header">
 				<h1>Daily Log</h1>
 			</header>
-			<div data-role="content">
+			<div id="displayList" data-role="content">
 			</div>
           	<div data-role="footer" data-position="fixed">
         		<nav data-role="navbar">
