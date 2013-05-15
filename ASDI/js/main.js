@@ -28,17 +28,37 @@ $('#display').on('pageinit', function(){
 		alert("You have not logged any food so default logs were added.");
 	}
 	for(i = 0; i < localStorage.length; i++){
-		$('#displayList').append('<ul> <li> <ul>');
-		var key = localStorage.key(i);
-		var value = localStorage.getItem(key);
-		var infoObj = JSON.parse(value);
-		for(var x in infoObj){
-			if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
-			var subText = infoObj[x].name + " " + infoObj[x].value;
-			$('<li>').appendTo('#displayList ul li ul').text(subText);
-			console.log(subText);
+		if($.isNumeric(localStorage.key(i)) == true){
+			$('#displayList').append('<ul> <li> <ul id="list'+ i +'">');
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			var infoObj = JSON.parse(value);
+			for(var x in infoObj){
+				if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
+				var subText = infoObj[x].name + " " + infoObj[x].value;
+				$('<li>').appendTo('#list'+i).text(subText);
+				}
 			}
+//			var editItem = $('<a href="#editItem">Edit</a><br>').appendTo('#displayList').attr('id', key);
+			var deleteItem = $('<a href="#">Delete</a>').appendTo('#displayList').attr('id', key);
 		}
+	}
+
+//		editItem.on('click', function(){
+
+//		});
+
+		deleteItem.on('click', function(){
+		var question = confirm("Are you sure you want to delete this log?");
+		if(question){
+			localStorage.removeItem(this.id);
+			alert("Log deleted.");
+			window.location.reload();
+		}else{
+			alert("Log was NOT deleted.");
+			return false;
 		}
+
+		});
 });
 
