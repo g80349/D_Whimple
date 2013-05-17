@@ -17,8 +17,14 @@ $('#addItem').on('pageinit', function(){
 			}else{
 				var id = key;
 			}
-			var data = $('#form').serializeArray();
-		    localStorage.setItem(id, JSON.stringify(data));
+	        var logs = {};
+	        logs.date = ["Date:", $("#date").val()];
+	        logs.weight = ["Today's Weight:", $("#weight").val()];
+	        logs.select = ["Meal Type:", $("#select").val()];
+	        logs.food1 = ["Food:", $("#food1").val()];
+	        logs.foodCals1 = ["Calories:", $("#foodCals1").val()];
+	        logs.serv1 = ["Servings:", $("#serv1").val()];
+		    localStorage.setItem(id, JSON.stringify(logs));
 			alert("Log saved!");
 			$('#logFood').removeAttr('data-role');
 		})
@@ -43,10 +49,10 @@ $('#display').on('pageinit', function(){
 				var value = localStorage.getItem(key);
 				var infoObj = JSON.parse(value);
 				for(var x in infoObj){
-					if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
-					var subText = infoObj[x].name + " " + infoObj[x].value;
+					//if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
+					var subText = infoObj[x][0]+ " " + infoObj[x][1];
 					$('<li>').appendTo('#list'+i).text(subText).css('text-align', 'left');
-					}
+					//}
 				}
 				var edit = $('<a href="#addItem">Edit</a><br>').appendTo('#displayList').attr('id', key);
 				var deleteItem = $('<a href="#">Delete</a>').appendTo('#displayList').attr('id', key);
@@ -57,9 +63,6 @@ $('#display').on('pageinit', function(){
 		}
 
 
-	$('#jsonButton').on('click', function(){
-				console.log(localStorage);
-	});
 });
 
 var deleteLog = function(){
@@ -82,12 +85,12 @@ function myEle(x){
 var editLog = function(){
 		var val = localStorage.getItem(this.id);
 		var data = JSON.parse(val);
-		myEle("date").value              = data[0].value;
-		myEle("weight").value            = data[1].value;
-		myEle("select").value            = data[2].value;
-		myEle("food1").value             = data[3].value;
-		myEle("foodCals1").value         = data[4].value;
-		myEle("serv1").value             = data[5].value;
+		myEle("date").value              = data.date[1];
+		myEle("weight").value            = data.weight[1];
+		myEle("select").value            = data.select[1];
+		myEle("food1").value             = data.food1[1];
+		myEle("foodCals1").value         = data.foodCals1[1];
+		myEle("serv1").value             = data.serv1[1];
 
 		$('#logFood').attr('data-role', this.id);
 
@@ -116,8 +119,12 @@ $('#jsonButton').on('click',function(){
 			dataType : "json",
 			success  : function(data, status){
 					   		console.log(status, data);
+					   		var items = [data.log1,data.log2,data.log3,data.log4,data.log5,data.log6,data.log7,data.log8,data.log9,data.log10,data.log11,data.log12,data.log13,data.log14,data.log15,data.log16,data.log17,data.log18,data.log19,data.log20]
+					   		for(x = 0; x < items.length; x++){
+					   		$(items).serializeArray()
 							var uniqueId = Math.floor(Math.random()*1000000000);
-							localStorage.setItem(uniqueId, JSON.stringify(data));
+							localStorage.setItem(uniqueId, JSON.stringify(items[x]));
+							}
 						},
 			error  : function(error, parseerror){
 			   		 console.log(error, parseerror);
