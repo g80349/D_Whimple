@@ -10,18 +10,21 @@ $('#home').on('pageinit', function(){
 
 $('#addItem').on('pageinit', function(){
 
-	$('#logFood').on("click", function(){
-		var key = $('#logFood').attr('data-role');
-		if($.isNumeric(key) == false){
-			var id = Math.floor(Math.random()*10000000001);
-		}else{
-			var id = key;
+		$('#logFood').on("click", saveData)
+	var saveData = function(){
+			var key = $('#logFood').attr('data-role');
+			if($.isNumeric(key) == false){
+				var id = Math.floor(Math.random()*10000000001);
+			}else{
+				var id = key;
+			}
+			var data = $('#form').serializeArray();
+		    localStorage.setItem(id, JSON.stringify(data));
+			alert("Log saved!");
+			$('#logFood').removeAttr('data-role');
+			window.location.reload();
 		}
-		var data = $('#form').serializeArray();
-	    localStorage.setItem(id, JSON.stringify(data));
-		alert("Log saved!");
-		$('#logFood').removeAttr('data-role');
-	});
+
 
 
 	$("#clear").on("click",function(){
@@ -30,28 +33,38 @@ $('#addItem').on('pageinit', function(){
 
 });
 $('#display').on('pageinit', function(){
-	if(localStorage.length === 0){
-		alert("You have not logged any food so default logs were added.");
-	}
-	for(i = 0; i < localStorage.length; i++){
-		if($.isNumeric(localStorage.key(i)) == true){
-			$('#displayList').append('<ul> <li> <ul id="list'+ i +'">');
-			var key = localStorage.key(i);
-			var value = localStorage.getItem(key);
-			var infoObj = JSON.parse(value);
-			for(var x in infoObj){
-				if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
-				var subText = infoObj[x].name + " " + infoObj[x].value;
-				$('<li>').appendTo('#list'+i).text(subText).css('text-align', 'left');
-				}
-			}
-			var edit = $('<a href="#addItem">Edit</a><br>').appendTo('#displayList').attr('id', key);
-			var deleteItem = $('<a href="#">Delete</a>').appendTo('#displayList').attr('id', key);
 
-			deleteItem.on('click', deleteLog);
-			edit.on('click', editLog);
+	var getData = function(){
+		if(localStorage.length === 0){
+			alert("You have not logged any food so default logs were added.");
+		}
+		for(i = 0; i < localStorage.length; i++){
+			if($.isNumeric(localStorage.key(i)) == true){
+				$('#displayList').append('<ul> <li> <ul id="list'+ i +'">');
+				var key = localStorage.key(i);
+				var value = localStorage.getItem(key);
+				var infoObj = JSON.parse(value);
+				for(var x in infoObj){
+					if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
+					var subText = infoObj[x].name + " " + infoObj[x].value;
+					$('<li>').appendTo('#list'+i).text(subText).css('text-align', 'left');
+					}
+				}
+				var edit = $('<a href="#addItem">Edit</a><br>').appendTo('#displayList').attr('id', key);
+				var deleteItem = $('<a href="#">Delete</a>').appendTo('#displayList').attr('id', key);
+
+				deleteItem.on('click', deleteLog);
+				edit.on('click', editLog);
+			}
 		}
 	}
+	getData();
+	$('#jsonButton').on('click', function(){
+				var key = localStorage.key(i);
+				var value = localStorage.getItem(key);
+				var infoObj = JSON.parse(value);
+		console.log(localStorage.date[0]);
+	});
 });
 
 var deleteLog = function(){
@@ -103,13 +116,15 @@ var editLog = function(){
 
 $('#jsonButton').on('click',function(){
 	$.ajax({
-			url : "xhr/json.js",
+			url : "xhr/data.json",
 			type     : "GET",
 			dataType : "json",
 			success  : function(data, status){
 					   		console.log(status, data);
-							for(var x in json){
-							}
+					   		console.log(data[0]);
+							var uniqueId = Math.floor(Math.random()*1000000000);
+							localStorage.setItem(uniqueId, JSON.stringify(data));
+
 						},
 			error  : function(error, parseerror){
 			   		 console.log(error, parseerror);
@@ -120,11 +135,14 @@ $('#jsonButton').on('click',function(){
 
 $('#xmlButton').on('click',function(){
 	$.ajax({
-			url : "xhr/json.js",
+			url : "xhr/data.json",
 			type     : "GET",
-			dataType : "xml",
+			dataType : "text xml",
 			success  : function(data, status){
 					   		console.log(status, data);
+							var uniqueId = Math.floor(Math.random()*1000000000);
+							localStorage.setItem(uniqueId, JSON.stringify(data));
+							console.log(localStorage)
 					   },
 			error  : function(error, parseerror){
 			   		 console.log(error, parseerror);
