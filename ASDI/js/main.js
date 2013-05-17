@@ -11,10 +11,16 @@ $('#home').on('pageinit', function(){
 $('#addItem').on('pageinit', function(){
 
 	$('#logFood').on("click", function(){
+		var key = $('#logFood').attr('data-role');
+		if($.isNumeric(key) == false){
+			var id = Math.floor(Math.random()*10000000001);
+		}else{
+			var id = key;
+		}
 		var data = $('#form').serializeArray();
-		var id = Math.floor(Math.random()*1000000000);
 	    localStorage.setItem(id, JSON.stringify(data));
 		alert("Log saved!");
+		$('#logFood').removeAttr('data-role');
 	});
 
 
@@ -75,16 +81,7 @@ var editLog = function(){
 		myEle("foodCals1").value         = data[4].value;
 		myEle("serv1").value             = data[5].value;
 
-		$('#logFood').attr('id', 'editFood');
-		$('#editFood').attr('data-role', this.id);
-		$('#editFood').on('click', function(){
-			var key = $('#editFood').attr('data-role');
-			console.log(key);
-			var data = $('#form').serializeArray();
-		    localStorage.setItem(key, JSON.stringify(data));
-			alert("Edit Saved!");
-			$('#editFood').attr('id', 'logFood');
-		});
+		$('#logFood').attr('data-role', this.id);
 
 /*		$('#date').text(data[0].value);
 		$('#weight').text(data[1].value);
@@ -102,4 +99,63 @@ var editLog = function(){
 		console.log($('#serv1'));
 		console.log($('#logFood')); */
 };
+
+
+$('#jsonButton').on('click',function(){
+	$.ajax({
+			url : "xhr/json.js",
+			type     : "GET",
+			dataType : "json",
+			success  : function(data, status){
+					   		console.log(status, data);
+							for(var x in json){
+							}
+						},
+			error  : function(error, parseerror){
+			   		 console.log(error, parseerror);
+			}
+
+	});
+});
+
+$('#xmlButton').on('click',function(){
+	$.ajax({
+			url : "xhr/json.js",
+			type     : "GET",
+			dataType : "xml",
+			success  : function(data, status){
+					   		console.log(status, data);
+					   },
+			error  : function(error, parseerror){
+			   		 console.log(error, parseerror);
+			}
+
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
