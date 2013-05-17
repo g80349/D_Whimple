@@ -10,8 +10,7 @@ $('#home').on('pageinit', function(){
 
 $('#addItem').on('pageinit', function(){
 
-		$('#logFood').on("click", saveData)
-	var saveData = function(){
+		$('#logFood').on("click", function(){
 			var key = $('#logFood').attr('data-role');
 			if($.isNumeric(key) == false){
 				var id = Math.floor(Math.random()*10000000001);
@@ -22,8 +21,7 @@ $('#addItem').on('pageinit', function(){
 		    localStorage.setItem(id, JSON.stringify(data));
 			alert("Log saved!");
 			$('#logFood').removeAttr('data-role');
-			window.location.reload();
-		}
+		})
 
 
 
@@ -34,7 +32,7 @@ $('#addItem').on('pageinit', function(){
 });
 $('#display').on('pageinit', function(){
 
-	var getData = function(){
+
 		if(localStorage.length === 0){
 			alert("You have not logged any food so default logs were added.");
 		}
@@ -57,13 +55,10 @@ $('#display').on('pageinit', function(){
 				edit.on('click', editLog);
 			}
 		}
-	}
-	getData();
+
+
 	$('#jsonButton').on('click', function(){
-				var key = localStorage.key(i);
-				var value = localStorage.getItem(key);
-				var infoObj = JSON.parse(value);
-		console.log(localStorage.date[0]);
+				console.log(localStorage);
 	});
 });
 
@@ -121,10 +116,8 @@ $('#jsonButton').on('click',function(){
 			dataType : "json",
 			success  : function(data, status){
 					   		console.log(status, data);
-					   		console.log(data[0]);
 							var uniqueId = Math.floor(Math.random()*1000000000);
 							localStorage.setItem(uniqueId, JSON.stringify(data));
-
 						},
 			error  : function(error, parseerror){
 			   		 console.log(error, parseerror);
@@ -137,7 +130,7 @@ $('#xmlButton').on('click',function(){
 	$.ajax({
 			url : "xhr/data.json",
 			type     : "GET",
-			dataType : "text xml",
+			dataType : "xml",
 			success  : function(data, status){
 					   		console.log(status, data);
 							var uniqueId = Math.floor(Math.random()*1000000000);
