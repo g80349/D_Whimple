@@ -10,25 +10,24 @@ $('#home').on('pageinit', function(){
 
 $('#addItem').on('pageinit', function(){
 
-		$('#logFood').on("click", function(){
-			var key = $('#logFood').attr('data-role');
-			if($.isNumeric(key) == false){
-				var id = Math.floor(Math.random()*10000000001);
-			}else{
-				var id = key;
-			}
-	        var logs = {};
-	        logs.date = ["Date:", $("#date").val()];
-	        logs.weight = ["Today's Weight:", $("#weight").val()];
-	        logs.select = ["Meal Type:", $("#select").val()];
-	        logs.food1 = ["Food:", $("#food1").val()];
-	        logs.foodCals1 = ["Calories:", $("#foodCals1").val()];
-	        logs.serv1 = ["Servings:", $("#serv1").val()];
-		    localStorage.setItem(id, JSON.stringify(logs));
-			alert("Log saved!");
-			$('#logFood').removeAttr('data-role');
-		})
-
+	$('#logFood').on("click", function(){
+		var key = $('#logFood').attr('data-role');
+		if($.isNumeric(key) == false){
+			var id = Math.floor(Math.random()*10000000001);
+		}else{
+			var id = key;
+		}
+        var logs = {};
+        logs.date = ["Date:", $("#date").val()];
+        logs.weight = ["Today's Weight:", $("#weight").val()];
+        logs.select = ["Meal Type:", $("#select").val()];
+        logs.food1 = ["Food:", $("#food1").val()];
+        logs.foodCals1 = ["Calories:", $("#foodCals1").val()];
+        logs.serv1 = ["Servings:", $("#serv1").val()];
+	    localStorage.setItem(id, JSON.stringify(logs));
+		alert("Log saved!");
+		$('#logFood').removeAttr('data-role');
+	});
 
 
 	$("#clear").on("click",function(){
@@ -121,7 +120,6 @@ $('#jsonButton').on('click',function(){
 					   		console.log(status, data);
 					   		var items = [data.log1,data.log2,data.log3,data.log4,data.log5,data.log6,data.log7,data.log8,data.log9,data.log10,data.log11,data.log12,data.log13,data.log14,data.log15,data.log16,data.log17,data.log18,data.log19,data.log20]
 					   		for(x = 0; x < items.length; x++){
-					   		$(items).serializeArray()
 							var uniqueId = Math.floor(Math.random()*1000000000);
 							localStorage.setItem(uniqueId, JSON.stringify(items[x]));
 							}
@@ -135,17 +133,28 @@ $('#jsonButton').on('click',function(){
 
 $('#xmlButton').on('click',function(){
 	$.ajax({
-			url : "xhr/data.json",
+			url : "xhr/text.xml",
 			type     : "GET",
 			dataType : "xml",
 			success  : function(data, status){
 					   		console.log(status, data);
-							var uniqueId = Math.floor(Math.random()*1000000000);
-							localStorage.setItem(uniqueId, JSON.stringify(data));
-							console.log(localStorage)
-					   },
-			error  : function(error, parseerror){
-			   		 console.log(error, parseerror);
+			for(i = 1; i <= $(data).find("date1").length; i++){
+				var text = "log" + i;
+				var logs = {}
+					logs.date 		= ["Date:",$(data).find(text+">date2").text()];
+					logs.weight 	= ["Today's Weight:", $(data).find(text+">weight2").text()];
+					logs.select 	= ["Meal Type:", $(data).find(text+">select2").text()];
+					logs.food1 		= ["Food:", $(data).find(text+">food2").text()];
+					logs.foodCals1 	= ["Calories:", $(data).find(text+">foodCals2").text()];
+					logs.serv1 		= ["Servings:", $(data).find(text+">serv2").text()];
+
+					console.log(logs)
+					var uniqueId = Math.floor(Math.random()*1000000000);
+					localStorage.setItem(uniqueId, JSON.stringify(logs));
+			}
+					 },
+			error    : function(error, parseerror){
+			   		   console.log(error, parseerror);
 			}
 
 	});

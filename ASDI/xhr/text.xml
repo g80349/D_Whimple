@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<logs>
+	<log1>
+		<date1>Date:</date1>
+		<date2>2012-02-27</date2>
+		<weight1>Weight:</weight1>
+		<weight2>220</weight2>
+		<select1>Meal:</select1>
+		<select2>Breakfast</select2>
+		<food1>Food:</food1>
+		<food2>Eggs</food2>
+		<foodCals1>Calories:</foodCals1>
+		<foodCals2>30</foodCals2>
+		<serv1>Servings:</serv1>
+		<serv2>3</serv2>
+	</log1>
+	<log2>
+		<date1>Date:</date1>
+		<date2>2012-03-27</date2>
+		<weight1>Weight:</weight1>
+		<weight2>210</weight2>
+		<select1>Meal:</select1>
+		<select2>Lunch</select2>
+		<food1>Food:</food1>
+		<food2>Sandwich</food2>
+		<foodCals1>Calories:</foodCals1>
+		<foodCals2>220</foodCals2>
+		<serv1>Servings:</serv1>
+		<serv2>1</serv2>
+	</log2>
+	<log3>
+		<date1>Date:</date1>
+		<date2>2012-04-27</date2>
+		<weight1>Weight:</weight1>
+		<weight2>200</weight2>
+		<select1>Meal:</select1>
+		<select2>Dinner</select2>
+		<food1>Food:</food1>
+		<food2>Spaghetti</food2>
+		<foodCals1>Calories:</foodCals1>
+		<foodCals2>300</foodCals2>
+		<serv1>Serving(s):</serv1>
+		<serv2>1</serv2>
+	</log3>
+	<log4>
+		<date1>Date:</date1>
+		<date2>2012-05-27</date2>
+		<weight1>Today's Weight:</weight1>
+		<weight2>195</weight2>
+		<select1>Meal:</select1>
+		<select2>Snacks</select2>
+		<food1>Food:</food1>
+		<food2>Gummy Bears</food2>
+		<foodCals1>Calories:</foodCals1>
+		<foodCals2>35</foodCals2>
+		<serv1>Serving(s):</serv1>
+		<serv2>3</serv2>
+	</log4>
+	<log5>
+		<date1>Date:</date1>
+		<date2>2012-05-27</date2>
+		<weight1>Today's Weight:</weight1>
+		<weight2>195</weight2>
+		<select1>Meal:</select1>
+		<select2>Breakfast</select2>
+		<food1>Food:</food1>
+		<food2>Bagel</food2>
+		<foodCals1>Calories:</foodCals1>
+		<foodCals2>120</foodCals2>
+		<serv1>Serving(s):</serv1>
+		<serv2>2</serv2>
+	</log5>
+</logs>
