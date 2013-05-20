@@ -38,16 +38,15 @@ $('#addItem').on('pageinit', function(){
 $('#display').on('pageinit', function(){
 
 
-		if(localStorage.length === 0){
-			alert("You have not logged any food so default logs were added.");
-		}
+//		if(localStorage.length === 0){
+//			alert("You have not logged any food so default logs were added.");
+//		}
 		for(i = 0; i < localStorage.length; i++){
 			if($.isNumeric(localStorage.key(i)) == true){
 				$('#displayList').append('<ul> <li> <ul id="list'+ i +'">');
 				var key = localStorage.key(i);
 				var value = localStorage.getItem(key);
 				var infoObj = JSON.parse(value);
-				console.log(infoObj);
 				for(var x in infoObj){
 					//if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
 					var subText = infoObj[x][0]+ " " + infoObj[x][1];
@@ -114,48 +113,30 @@ var editLog = function(){
 
 $('#jsonButton').on('click',function(){
 	$.ajax({
-			url : "xhr/data.json",
+			url : "_view/logs",
 			type     : "GET",
 			dataType : "json",
 			success  : function(data, status){
-					   		console.log(status, data);
-					   		var items = [data.log1,data.log2,data.log3,data.log4,data.log5,data.log6,data.log7,data.log8,data.log9,data.log10,data.log11,data.log12,data.log13,data.log14,data.log15,data.log16,data.log17,data.log18,data.log19,data.log20]
-					   		for(x = 0; x < items.length; x++){
-							var uniqueId = Math.floor(Math.random()*1000000000);
-							localStorage.setItem(uniqueId, JSON.stringify(items[x]));
-							}
-						},
+					   		$.each(data.rows, function (index, value){
+						   		var log = value.value;
+						   		var i = index
+						   		var date =log.date[1];
+								$('#displayList').append('<li id="list'+ i +'"><h3>' + date +'</h3>');
+								for(var x in log){
+									if(x !== 'date'){
+										var subText = log[x][0]+ " " + log[x][1];
+										$('<p>').appendTo('#list'+i).text(subText).css('text-align', 'left');
+									}
+								}
+								var edit = $('<a href="#addItem" class="edit">Edit</a>').appendTo('#displayList')
+								var deleteItem = $('<a href="#" class="edit">Delete</a>').appendTo('#displayList')
+								deleteItem.on('click', deleteLog);
+								edit.on('click', editLog);
+							});
+							$('#displayList').listview('refresh');
+					  },
 			error  : function(error, parseerror){
 			   		 console.log(error, parseerror);
-			}
-
-	});
-});
-
-$('#xmlButton').on('click',function(){
-	$.ajax({
-			url : "xhr/text.xml",
-			type     : "GET",
-			dataType : "xml",
-			success  : function(data, status){
-					   		console.log(status, data);
-			for(i = 1; i <= $(data).find("date1").length; i++){
-				var text = "log" + i;
-				var logs = {}
-					logs.date 		= ["Date:",$(data).find(text+">date2").text()];
-					logs.weight 	= ["Today's Weight:", $(data).find(text+">weight2").text()];
-					logs.select 	= ["Meal Type:", $(data).find(text+">select2").text()];
-					logs.food1 		= ["Food:", $(data).find(text+">food2").text()];
-					logs.foodCals1 	= ["Calories:", $(data).find(text+">foodCals2").text()];
-					logs.serv1 		= ["Servings:", $(data).find(text+">serv2").text()];
-
-					console.log(logs)
-					var uniqueId = Math.floor(Math.random()*1000000000);
-					localStorage.setItem(uniqueId, JSON.stringify(logs));
-			}
-					 },
-			error    : function(error, parseerror){
-			   		   console.log(error, parseerror);
 			}
 
 	});
