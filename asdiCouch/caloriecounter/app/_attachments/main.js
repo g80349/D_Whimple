@@ -112,6 +112,7 @@ var editLog = function(){
 
 
 $('#jsonButton').on('click',function(){
+	$('#displayList').empty();
 	$.ajax({
 			url : "_view/logs",
 			type     : "GET",
