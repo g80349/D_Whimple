@@ -10,7 +10,7 @@ $('#home').on('pageinit', function(){
 
 $('#addItem').on('pageinit', function(){
 
-	$('#logFood').on("click", function(){
+/*	$('#logFood').on("click", function(){
 		var key = $('#logFood').attr('data-role');
 		if($.isNumeric(key) == false){
 			var id = Math.floor(Math.random()*10000000001);
@@ -28,7 +28,35 @@ $('#addItem').on('pageinit', function(){
 		alert("Log saved!");
 		$('#logFood').removeAttr('data-role');
 	});
+*/
 
+	$('#logFood').on("click", function(){
+		var key = $('#logFood').attr('data-role');
+		var rev = $('#logFood').attr('name');
+		if(key == "" || key == undefined){
+			var idValue = Math.floor(Math.random()*10000000001);
+			var id = 'log'+idValue;
+		}else{
+			var id = key;
+		}
+        var logs = {
+        _id :  id,
+        _rev : rev,
+        date : ["Date:", $("#date").val()],
+        weight : ["Today's Weight:", $("#weight").val()],
+        select : ["Meal Type:", $("#select").val()],
+        food1 : ["Food:", $("#food1").val()],
+        foodCals1 : ["Calories:", $("#foodCals1").val()],
+        serv1 : ["Servings:", $("#serv1").val()]
+        }
+        $.couch.db("caloriecounter").saveDoc(logs);
+		alert("Log saved!");
+		$('#logFood').removeAttr('data-role');
+		$('#logFood').removeAttr('name');
+		$('#logFood').attr('Log Entry');
+
+		$('#displayList').listview('refresh');
+	});
 
 	$("#clear").on("click",function(){
 		localStorage.clear();
@@ -37,43 +65,60 @@ $('#addItem').on('pageinit', function(){
 });
 $('#display').on('pageinit', function(){
 
+	$('#displayList').empty();
 
-//		if(localStorage.length === 0){
-//			alert("You have not logged any food so default logs were added.");
-//		}
-		for(i = 0; i < localStorage.length; i++){
-			if($.isNumeric(localStorage.key(i)) == true){
-				$('#displayList').append('<ul> <li> <ul id="list'+ i +'">');
-				var key = localStorage.key(i);
-				var value = localStorage.getItem(key);
-				var infoObj = JSON.parse(value);
-				for(var x in infoObj){
-					//if(infoObj[x].value !== "" && infoObj[x].value !== undefined){
-					var subText = infoObj[x][0]+ " " + infoObj[x][1];
-					$('<li>').appendTo('#list'+i).text(subText).css('text-align', 'left');
-					//}
-				}
-				var edit = $('<a href="#addItem">Edit</a><br>').appendTo('#displayList').attr('id', key);
-				var deleteItem = $('<a href="#">Delete</a>').appendTo('#displayList').attr('id', key);
-
-				deleteItem.on('click', deleteLog);
-				edit.on('click', editLog);
+	$.couch.db("caloriecounter").view("app/logs",{
+			success  : function(data, status){
+		   		$.each(data.rows, function (index, value){
+			   		var log = value.value;
+			   		var i = index
+			   		var date =log.date[1];
+					$('#displayList').append('<li id="list'+ i +'"><a href="#addItem" id="anchor'+ i +'" class="edit" data-role="'+value.id+'"><h3>' + date +'</h3>');
+					for(var x in log){
+						if(x !== 'date'){
+							var subText = log[x][0]+ " " + log[x][1];
+							$('<p>').appendTo('#anchor'+i).text(subText).css('text-align', 'left');
+						}
+					}
+					console.log(value)
+					$('<a href="#" id="delete'+i+'" class="deleteLog" data-role="'+value.id+'" data-icon="delete">Delete</a>').appendTo('#list'+ i);
+					$('a.deleteLog').on('click', deleteLog);
+					$('a.edit').on('click', editLog);
+				});
+				$('#displayList').listview('refresh');
+		    },
+			error  : function(error, parseerror){
+			   		 console.log(error, parseerror);
 			}
-		}
 
-
+	});
 });
 
 var deleteLog = function(){
-	var question = confirm("Are you sure you want to delete this log?");
-	if(question){
-		localStorage.removeItem(this.id);
-		alert("Log deleted.");
-		window.location.reload();
-	}else{
-		alert("Log was NOT deleted.");
-		return false;
-	}
+	var id = this.id
+	var itemId = $('#'+id+'').attr('data-role');
+	$.couch.db('caloriecounter').openDoc(itemId,{
+		success: function(data) {
+			$('#'+id+'').attr('name',rev);
+			var rev = $('#'+id+'').attr('name');
+			var question = confirm("Are you sure you want to delete this log?");
+			if(question){
+				$.couch.db('caloriecounter').removeDoc({_id:itemId, _rev:rev}, {
+				     success: function(data) {
+				         console.log(data);
+					 },
+					error  : function(error, parseerror){
+					   		 console.log(error, parseerror);
+					}
+				});
+				alert("Log deleted.");
+				window.location.reload();
+			}else{
+				alert("Log was NOT deleted.");
+				return false;
+			}
+		}
+	});
 };
 
 function myEle(x){
@@ -81,7 +126,29 @@ function myEle(x){
 	return myElement;
 };
 
+
 var editLog = function(){
+	var id = this.id
+	var itemId = $('#'+id+'').attr('data-role');
+	console.log(itemId)
+	$.couch.db('caloriecounter').openDoc(itemId,{
+			success  : function(data, status){
+				var rev = data._rev
+				myEle("date").value      = data.date[1];
+				myEle("weight").value    = data.weight[1];
+				myEle("select").value    = data.select[1];
+				myEle("food1").value     = data.food1[1];
+				myEle("foodCals1").value = data.foodCals1[1];
+				myEle("serv1").value     = data.serv1[1];
+
+				$('#logFood').attr('data-role', itemId);
+				$('#logFood').attr('name', rev);
+				$('#logFood').attr('value', 'Edit Entry');
+		}
+	})
+
+
+/*var editLog = function(){
 		var val = localStorage.getItem(this.id);
 		var data = JSON.parse(val);
 		myEle("date").value              = data.date[1];
@@ -93,7 +160,7 @@ var editLog = function(){
 
 		$('#logFood').attr('data-role', this.id);
 
-/*		$('#date').text(data[0].value);
+		$('#date').text(data[0].value);
 		$('#weight').text(data[1].value);
 		$('#select').text(data[2].value);
 		$('#food1').text(data[3].value);
@@ -111,10 +178,10 @@ var editLog = function(){
 };
 
 
-$('#jsonButton').on('click',function(){
+/*$('#jsonButton').on('click',function(){
 	$('#displayList').empty();
 	$.ajax({
-			url : "_view/logs",
+			url : "_view/json",
 			type     : "GET",
 			dataType : "json",
 			success  : function(data, status){
@@ -136,6 +203,34 @@ $('#jsonButton').on('click',function(){
 							});
 							$('#displayList').listview('refresh');
 					  },
+			error  : function(error, parseerror){
+			   		 console.log(error, parseerror);
+			}
+
+	});
+});*/
+
+$('#jsonButton').on('click',function(){
+	$('#displayList').empty();
+	$.couch.db("caloriecounter").view("app/json",{
+			success  : function(data, status){
+		   		$.each(data.rows, function (index, value){
+			   		var log = value.value;
+			   		var i = index
+			   		var date =log.date[1];
+					$('#displayList').append('<li id="list'+ i +'"><a href="#addItem" id="anchor'+ i +'" class="edit" data-role="'+value.id+'"><h3>' + date +'</h3>');
+					for(var x in log){
+						if(x !== 'date'){
+							var subText = log[x][0]+ " " + log[x][1];
+							$('<p>').appendTo('#anchor'+i).text(subText).css('text-align', 'left');
+						}
+					}
+					$('<a href="#" id="delete'+i+'" class="deleteLog" data-role="'+value.id+'" data-icon="delete">Delete</a>').appendTo('#list'+ i);
+					$('a.deleteLog').on('click', deleteLog);
+					$('a.edit').on('click', editLog);
+				});
+				$('#displayList').listview('refresh');
+		    },
 			error  : function(error, parseerror){
 			   		 console.log(error, parseerror);
 			}

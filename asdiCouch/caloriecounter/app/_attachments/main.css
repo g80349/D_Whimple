@@ -12,6 +12,14 @@ div{
 img{
 	width: 260px;
 }
-a.edit{
-	padding-right: 10px;
+.ui-bar-c, .ui-bar-c input, .ui-bar-c select, .ui-bar-c textarea, .ui-bar-c button{
+background: #393939;
+}
+p{
+	padding-left: 30px;
+}
+h3{
+	color: #467dad;
+	padding-bottom: 5px;
+	padding-left: 40px;
 }
