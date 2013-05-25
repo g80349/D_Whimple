@@ -58,11 +58,12 @@ $('#addItem').on('pageinit', function(){
 		$('#displayList').listview('refresh');
 	});
 
-	$("#clear").on("click",function(){
+/*	$("#clear").on("click",function(){
 		localStorage.clear();
 	});
-
+*/
 });
+
 $('#display').on('pageinit', function(){
 
 	$('#displayList').empty();
@@ -80,7 +81,6 @@ $('#display').on('pageinit', function(){
 							$('<p>').appendTo('#anchor'+i).text(subText).css('text-align', 'left');
 						}
 					}
-					console.log(value)
 					$('<a href="#" id="delete'+i+'" class="deleteLog" data-role="'+value.id+'" data-icon="delete">Delete</a>').appendTo('#list'+ i);
 					$('a.deleteLog').on('click', deleteLog);
 					$('a.edit').on('click', editLog);
@@ -95,30 +95,39 @@ $('#display').on('pageinit', function(){
 });
 
 var deleteLog = function(){
-	var id = this.id
+	var id = this.id;
 	var itemId = $('#'+id+'').attr('data-role');
 	$.couch.db('caloriecounter').openDoc(itemId,{
 		success: function(data) {
-			$('#'+id+'').attr('name',rev);
+			var revision = data._rev;
+			$('#'+id+'').attr('name',revision);
 			var rev = $('#'+id+'').attr('name');
-			var question = confirm("Are you sure you want to delete this log?");
-			if(question){
-				$.couch.db('caloriecounter').removeDoc({_id:itemId, _rev:rev}, {
-				     success: function(data) {
-				         console.log(data);
-					 },
-					error  : function(error, parseerror){
-					   		 console.log(error, parseerror);
-					}
-				});
-				alert("Log deleted.");
-				window.location.reload();
-			}else{
-				alert("Log was NOT deleted.");
-				return false;
-			}
+			deleteItem();
 		}
 	});
+	var deleteItem = function(){
+		var rev = $('#'+id+'').attr('name');
+		var question = confirm("Are you sure you want to delete this log?");
+		if(question){
+		console.log(itemId);
+		console.log(rev);
+		var doc = {_id: itemId, _rev: rev};
+		console.log(doc)
+		$.couch.db('caloriecounter').removeDoc(doc, {
+		     success: function(data) {
+		         console.log(data);
+			 },
+			error  : function(error, parseerror){
+			   		 console.log(error, parseerror);
+			}
+		});
+			alert("Log deleted.");
+			window.location.reload();
+		}else{
+			alert("Log was NOT deleted.");
+			return false;
+		}
+	}
 };
 
 function myEle(x){
@@ -130,7 +139,6 @@ function myEle(x){
 var editLog = function(){
 	var id = this.id
 	var itemId = $('#'+id+'').attr('data-role');
-	console.log(itemId)
 	$.couch.db('caloriecounter').openDoc(itemId,{
 			success  : function(data, status){
 				var rev = data._rev
@@ -197,7 +205,7 @@ var editLog = function(){
 									}
 								}
 								var edit = $('<a href="#addItem" class="edit">Edit</a>').appendTo('#displayList')
-								var deleteItem = $('<a href="#" class="edit">Delete</a>').appendTo('#displayList')
+								$('<a href="#" class="deleteLog">Delete</a>').appendTo('#displayList')
 								deleteItem.on('click', deleteLog);
 								edit.on('click', editLog);
 							});
