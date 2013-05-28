@@ -8,7 +8,7 @@ $('#home').on('pageinit', function(){
 	//code needed for home page goes here
 });
 
-$('#addItem').on('pageinit', function(){
+$(document).on('pageinit', '#addItem', function(){
 
 /*	$('#logFood').on("click", function(){
 		var key = $('#logFood').attr('data-role');
@@ -49,14 +49,15 @@ $('#addItem').on('pageinit', function(){
         foodCals1 : ["Calories:", $("#foodCals1").val()],
         serv1 : ["Servings:", $("#serv1").val()]
         }
-        $.couch.db("caloriecounter").saveDoc(logs);
-		alert("Log saved!");
-		$('#logFood').removeAttr('data-role');
-		$('#logFood').removeAttr('name');
-		$('#logFood').attr('Log Entry');
+	        $.couch.db("caloriecounter").saveDoc(logs);
+			alert("Log saved!");
+			$('#logFood').removeAttr('data-role');
+			$('#logFood').removeAttr('name');
+			$('#logFood').attr('Log Entry');
 
-		$('#displayList').listview('refresh');
+			$('#displayList').listview('refresh');
 	});
+
 
 /*	$("#clear").on("click",function(){
 		localStorage.clear();
@@ -97,37 +98,27 @@ $('#display').on('pageinit', function(){
 var deleteLog = function(){
 	var id = this.id;
 	var itemId = $('#'+id+'').attr('data-role');
+	console.log(itemId)
 	$.couch.db('caloriecounter').openDoc(itemId,{
 		success: function(data) {
-			var revision = data._rev;
-			$('#'+id+'').attr('name',revision);
-			var rev = $('#'+id+'').attr('name');
-			deleteItem();
+			console.log("hi")
+			var rev = data._rev;
+			var doc = {
+					_id: itemId,
+					_rev: rev
+			}
+			console.log(doc)
+			$.couch.db('caloriecounter').removeDoc(doc);
+			var question = confirm("Are you sure you want to delete this log?");
+			if(question){
+				alert("Log deleted.");
+			}else{
+				alert("Log was NOT deleted.");
+				return false;
+			}
 		}
 	});
-	var deleteItem = function(){
-		var rev = $('#'+id+'').attr('name');
-		var question = confirm("Are you sure you want to delete this log?");
-		if(question){
-		console.log(itemId);
-		console.log(rev);
-		var doc = {_id: itemId, _rev: rev};
-		console.log(doc)
-		$.couch.db('caloriecounter').removeDoc(doc, {
-		     success: function(data) {
-		         console.log(data);
-			 },
-			error  : function(error, parseerror){
-			   		 console.log(error, parseerror);
-			}
-		});
-			alert("Log deleted.");
-			window.location.reload();
-		}else{
-			alert("Log was NOT deleted.");
-			return false;
-		}
-	}
+window.location.href ="#home"
 };
 
 function myEle(x){

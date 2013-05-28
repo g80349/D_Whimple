@@ -45,12 +45,12 @@
         	<form id="form">
             	<fieldset>
            			<div data-role="fieldcontain">
-           				<label for="date">Date</label><br>
-           				<input id="date" type="date" name="Date:" placeholder="mm/dd/yy"/>
+           				<label for="date">*Date</label><br>
+           				<input id="date" type="date" name="Date:" placeholder="mm/dd/yy" required/>
            			</div>
                		<div data-role="fieldcontain">
-           				<label for="weight">Today's Weight</label><br>
-           				<input id="weight" type="number" name="Weight:" placeholder="lbs."/>
+           				<label for="weight">*Today's Weight</label><br>
+           				<input id="weight" type="number" name="Weight:" placeholder="lbs." required/>
            			</div>
            			<div data-role="fieldcontain">
            				<label for="select"> Meal Type</label><br>
@@ -62,16 +62,16 @@
            				</select>
            			</div>
 					<div data-role="fieldcontain">
-						<label for="food1">Food</label><br>
-						<input type="text" id="food1" name="Food:" placeholder="Egg Whites"/>
+						<label for="food1">*Food</label><br>
+						<input type="text" id="food1" name="Food:" placeholder="Egg Whites" required/>
 					</div>
 					<div data-role="fieldcontain">
-						<label for="foodCals1">Calories</label><br>
-						<input type="text" id="foodCals1" name="Calories:" placeholder="60"/>
+						<label for="foodCals1">*Calories</label><br>
+						<input type="number" id="foodCals1" name="Calories:" placeholder="60" required/>
 					</div>
 					<div data-role="fieldcontain">
-						<label for="serv1">Servings</label><br>
-						<input type="text" id="serv1" name="Servings:"placeholder="2"/>
+						<label for="serv1">*Servings</label><br>
+						<input type="number" id="serv1" name="Servings:"placeholder="2" required/>
 					</div>
      	     		<input id="logFood"type="submit"  value="Log Entry" data-theme="b"/>
      	     		<a href="#display"id="jsonButton" data-role="button">JSON</a>
