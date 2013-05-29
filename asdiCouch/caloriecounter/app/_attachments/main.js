@@ -86,9 +86,9 @@ var deleteLog = function(){
 					_id: itemId,
 					_rev: rev
 			}
-			$.couch.db('caloriecounter').removeDoc(doc);
 			var question = confirm("Are you sure you want to delete this log?");
 			if(question){
+				$.couch.db('caloriecounter').removeDoc(doc);
 				alert("Log deleted.");
 			}else{
 				alert("Log was NOT deleted.");
